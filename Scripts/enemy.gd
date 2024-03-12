@@ -8,9 +8,11 @@ var player = null
 var Attack_timer = 0
 
 func _ready():
+	# At start hide enemies
 	visible =false
 
 func _process(_delta):
+	# If player in attack range and player pressed fight than attack
 	if player_attack:
 		if HP >0:
 			attack_player()
@@ -24,6 +26,7 @@ func _process(_delta):
 				print("enemy killed")
 
 func _physics_process(_delta):
+	# If player not in attack range play walking animations else attack animantions
 	if player_attack == false:
 		if player_chase:
 			position += (player.position - position)/speed
@@ -39,9 +42,11 @@ func _physics_process(_delta):
 		$AnimatedSprite2D.play("attack")
 
 func set_health_bar():
+	#Set healthbar enemies equal to HP
 	$Healthbar.value = HP
 	
 func attack_player():
+	# Set a timer and when it hits 100 attack player
 	Attack_timer +=1
 	if Attack_timer ==100: #speed of attack
 		player.player_health -= 10
@@ -51,6 +56,7 @@ func attack_player():
 			Attack_timer = 0
 
 func _on_detection__area_body_entered(body):
+	# If player enters enemy detection area become visible and follow player
 	if body.is_in_group("Player"):
 		visible = true
 		player = body
@@ -58,14 +64,17 @@ func _on_detection__area_body_entered(body):
 		print("Found enemy")
 
 func _on_detection__area_body_exited(body):
+	# If player leaves enemy detection area become visible and stop following player
 	if body.is_in_group("Player"):
 		player = null
 		player_chase =false
 
 func _on_player_azone_body_entered(body):
+	# If player gets in attack radius set mode player_attack
 	if body.is_in_group("Player"):
 		player_attack = true
 
 func _on_player_azone_body_exited(body):
+	# If player leaves the attack radius set mode player_attack to false
 	if body.is_in_group("Player"):
 		player_attack=false

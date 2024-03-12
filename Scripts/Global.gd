@@ -1,7 +1,8 @@
 extends Node
 
-var player_position = Vector2(645,160)
-var player_actionkey = false
+var player_position = Vector2(645,160) # Position of player in scene
+var player_actionkey = false # Show Action key to player
+
 
 func set_player_position(value):
 	player_position = value
