@@ -18,6 +18,7 @@ Slime World is set in colorfull pixelated world. Players will take on the role o
 ## Getting Started
 
 To play Slime World, you can download the latest releases.
+[Link to releases](https://github.com/Robbevanherpe1/Slime_World/releases)
 
 ### Installation
 
