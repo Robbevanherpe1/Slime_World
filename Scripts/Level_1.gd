@@ -1,6 +1,7 @@
 extends Node2D
 
 var player_enter = false
+var player
 
 func _process(_delta):
 	if player_enter == true:

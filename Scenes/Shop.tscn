@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://byoqclb22yxsc" path="res://LV1/Map/maps/shop.tmx" id="1_mef23"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="2_d3pdb"]
-[ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="2_vnaae"]
-[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_vyutb"]
-[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_7ofrp"]
+[ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="3_vecvc"]
+[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="4_wi5p7"]
+[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="5_buscu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hykqs"]
 size = Vector2(23.2595, 21.1129)
@@ -14,29 +14,47 @@ position = Vector2(-152, -129)
 scale = Vector2(2.26733, 1.59488)
 script = ExtResource("2_d3pdb")
 
-[node name="Player" parent="." index="3" instance=ExtResource("2_vnaae")]
-position = Vector2(229.345, 463.984)
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
-position = Vector2(1.52588e-05, 0)
-scale = Vector2(1, 1)
-
-[node name="menu" parent="Player" index="3" instance=ExtResource("3_vyutb")]
-
-[node name="stats" parent="Player" index="4" instance=ExtResource("4_7ofrp")]
-offset_left = -255.367
-offset_top = -194.372
-offset_right = -255.367
-offset_bottom = -194.372
-scale = Vector2(0.40748, 0.537376)
-
-[node name="Exit" type="Area2D" parent="." index="4"]
+[node name="Exit" type="Area2D" parent="." index="3"]
 scale = Vector2(0.655747, 0.920076)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
 position = Vector2(349.746, 511.104)
 scale = Vector2(1.6217, 1.77881)
 shape = SubResource("RectangleShape2D_hykqs")
+
+[node name="Player" parent="." index="4" instance=ExtResource("3_vecvc")]
+top_level = true
+visibility_layer = 2
+position = Vector2(369, 622)
+scale = Vector2(1.06237, 0.957054)
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
+zoom = Vector2(3, 3)
+process_callback = 0
+
+[node name="menuScreen" parent="Player" index="3" instance=ExtResource("4_wi5p7")]
+z_index = 1
+offset_left = -521.476
+offset_top = -305.103
+offset_right = -521.476
+offset_bottom = -305.103
+scale = Vector2(1.14808, 1.11172)
+
+[node name="stats" parent="Player" index="4" instance=ExtResource("5_buscu")]
+z_index = 4
+z_as_relative = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -180.728
+offset_top = -109.712
+offset_right = -180.728
+offset_bottom = -109.712
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.33735, 0.355759)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_exited" from="Exit" to="." method="_on_exit_body_exited"]
