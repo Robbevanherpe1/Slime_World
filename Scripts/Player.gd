@@ -30,8 +30,9 @@ func _process(_delta):
 	else:
 		add_stamina()
 
-	# If player_health <=0 vhange sceen to start
+	# If player_health <=0 change sceen to start and reset player position
 	if player_health <=0:
+		Global.set_player_position(Global.player_position_default)
 		get_tree().change_scene_to_file("res://Scenes/Start_Screen.tscn")
 
 func _physics_process(_delta):
