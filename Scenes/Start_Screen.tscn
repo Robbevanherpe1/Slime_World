@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://drhn8vrba7ltf"]
 
-[ext_resource type="Script" path="res://Scenes/Start_Screen.gd" id="1_gpnil"]
+[ext_resource type="Script" path="res://Scripts/Start_Screen.gd" id="1_gpnil"]
 [ext_resource type="Texture2D" uid="uid://dugkl8gryklga" path="res://Assets/HyperCasual-Game-UI/greenRectNormal.png" id="1_htfxt"]
 [ext_resource type="Texture2D" uid="uid://cmasdlkgknecu" path="res://Assets/game/StartScreen_background.png" id="3_j08eb"]
 

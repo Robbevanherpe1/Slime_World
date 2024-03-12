@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://wnbpgowncu6p"]
 
-[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_6gsg4"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_6gsg4"]
 [ext_resource type="Texture2D" uid="uid://cl2nk7lwxjh1" path="res://Assets/mystic_woods_free_2.1/sprites/characters/slime.png" id="1_enew5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhiae"]

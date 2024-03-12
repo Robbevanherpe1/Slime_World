@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://oqv6e552ubff"]
 
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_xjaax"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_50qxo"]
 [ext_resource type="Texture2D" uid="uid://br4j37fj5lvd" path="res://Assets/HyperCasual-Game-UI/closeBtn.png" id="2_lfywd"]
 [ext_resource type="Texture2D" uid="uid://fwkir7qpv4r1" path="res://Assets/HyperCasual-Game-UI/pinkRectNormal.png" id="3_6y8hm"]
 
@@ -49,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(10, 10)
 mouse_filter = 2
-script = ExtResource("1_xjaax")
+script = ExtResource("1_50qxo")
 
 [node name="MenuScreen" type="Panel" parent="."]
 layout_mode = 0

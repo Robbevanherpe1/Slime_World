@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://6e0wo5c0bi48"]
 
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4f6cn"]
 [ext_resource type="Texture2D" uid="uid://7twujmgumnue" path="res://Assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_8vglv"]
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="2_ubptt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj6g2"]
 atlas = ExtResource("2_8vglv")
@@ -302,7 +302,7 @@ z_as_relative = false
 y_sort_enabled = true
 collision_layer = 7
 collision_mask = 7
-script = ExtResource("2_ubptt")
+script = ExtResource("1_4f6cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -12)
