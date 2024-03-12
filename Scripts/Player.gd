@@ -16,6 +16,7 @@ func _process(_delta):
 	$stats/ColorRect/health_bar_player.value = player_health
 	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
 	$stats/ColorRect/stamina_bar_player.value = player_stamina
+	$ActionKey.visible = Global.get_player_actionkey()
 	
 	if Input.is_action_just_pressed("fight"):
 		remove_stamina()

@@ -313,6 +313,8 @@ collision_mask = 7
 script = ExtResource("1_4f6cn")
 
 [node name="ActionKey" type="Panel" parent="."]
+z_index = 5
+z_as_relative = false
 offset_left = -5.0
 offset_top = -29.0
 offset_right = 35.0
