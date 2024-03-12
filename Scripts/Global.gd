@@ -4,7 +4,6 @@ var player_position_default = Vector2(645,160) # Position of player in scene def
 var player_position = Vector2(645,160) # Position of player in scene
 var player_actionkey = false # Show Action key to player
 
-
 func set_player_position(value):
 	player_position = value
 
