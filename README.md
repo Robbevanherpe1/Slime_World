@@ -44,6 +44,6 @@ Slime World is released under the GNU GPLv3 Licence, see [LICENSE](LICENSE.md) f
 ## Acknowledgments
 
 - Godot Engine, for making this project possible.
-- [art resources that contributed to the project>](https://game-endeavor.itch.io/mystic-woods)
+- [art resources that contributed to the project](https://game-endeavor.itch.io/mystic-woods)
 
 Thank you for checking out Slime World. We hope you enjoy playing it as much as we've enjoyed making it!
