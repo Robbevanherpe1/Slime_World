@@ -1,7 +1,15 @@
-[gd_scene load_steps=41 format=3 uid="uid://6e0wo5c0bi48"]
+[gd_scene load_steps=42 format=3 uid="uid://6e0wo5c0bi48"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4f6cn"]
 [ext_resource type="Texture2D" uid="uid://7twujmgumnue" path="res://Assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_8vglv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ysqg"]
+bg_color = Color(0.552941, 0.34902, 0, 0.329412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj6g2"]
 atlas = ExtResource("2_8vglv")
@@ -304,12 +312,28 @@ collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_4f6cn")
 
+[node name="ActionKey" type="Panel" parent="."]
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 35.0
+offset_bottom = 11.0
+scale = Vector2(0.238802, 0.238521)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ysqg")
+
+[node name="key" type="Label" parent="ActionKey"]
+layout_mode = 0
+offset_left = 11.3687
+offset_top = 3.94752
+offset_right = 51.3687
+offset_bottom = 26.9475
+scale = Vector2(2.09098, 1.31978)
+text = "E"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -12)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_vru58")
-animation = &"fight_up"
-frame_progress = 0.995904
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
