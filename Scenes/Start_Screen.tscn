@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://drhn8vrba7ltf"]
+
+[ext_resource type="Script" path="res://Scenes/Start_Screen.gd" id="1_gpnil"]
+[ext_resource type="Texture2D" uid="uid://dugkl8gryklga" path="res://Assets/HyperCasual-Game-UI/greenRectNormal.png" id="1_htfxt"]
+[ext_resource type="Texture2D" uid="uid://cmasdlkgknecu" path="res://Assets/game/StartScreen_background.png" id="3_j08eb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln3ps"]
+bg_color = Color(0.27451, 0.431373, 0.607843, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1juah"]
+bg_color = Color(0.470588, 0.619608, 0.745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n481t"]
+bg_color = Color(0.513726, 0.498039, 0.541176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpnil")
+
+[node name="StartBox" type="Panel" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 369.0
+offset_top = 216.0
+offset_right = 609.0
+offset_bottom = 350.0
+scale = Vector2(1.65768, 1.61335)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ln3ps")
+
+[node name="Panel" type="Panel" parent="StartBox"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 233.0
+offset_bottom = 129.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1juah")
+
+[node name="Label" type="Label" parent="StartBox"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 19.0
+offset_right = 172.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+text = "SLIME WORLD"
+
+[node name="Panel2" type="Panel" parent="StartBox"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 63.0
+offset_right = 193.0
+offset_bottom = 117.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n481t")
+
+[node name="Label" type="Label" parent="StartBox/Panel2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 54.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "LV-1"
+
+[node name="Label" type="Label" parent="StartBox/Panel2/Label"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -18.0
+offset_right = 46.0
+offset_bottom = 5.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "World -1"
+
+[node name="playGame" type="Button" parent="StartBox"]
+z_index = 1
+layout_mode = 0
+offset_left = 143.0
+offset_top = 94.0
+offset_right = 510.0
+offset_bottom = 264.0
+scale = Vector2(0.104394, 0.0932246)
+icon = ExtResource("1_htfxt")
+flat = true
+
+[node name="Label" type="Label" parent="StartBox/playGame"]
+layout_mode = 0
+offset_left = 105.37
+offset_top = 42.9071
+offset_right = 194.37
+offset_bottom = 65.9071
+scale = Vector2(3.6726, 2.84692)
+text = "PLAY "
+
+[node name="StartScreenBackground" type="Sprite2D" parent="."]
+position = Vector2(579, 324)
+scale = Vector2(1.50031, 1.49355)
+texture = ExtResource("3_j08eb")
+
+[connection signal="pressed" from="StartBox/playGame" to="." method="_on_play_game_pressed"]

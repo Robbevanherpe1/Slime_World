@@ -1,0 +1,237 @@
+[gd_scene load_steps=8 format=3 uid="uid://oqv6e552ubff"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_xjaax"]
+[ext_resource type="Texture2D" uid="uid://br4j37fj5lvd" path="res://Assets/HyperCasual-Game-UI/closeBtn.png" id="2_lfywd"]
+[ext_resource type="Texture2D" uid="uid://fwkir7qpv4r1" path="res://Assets/HyperCasual-Game-UI/pinkRectNormal.png" id="3_6y8hm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvhog"]
+bg_color = Color(0.964706, 0.701961, 0.282353, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing_size = 0.12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6yloh"]
+bg_color = Color(0.705882, 0.427451, 0.262745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+anti_aliasing_size = 0.573
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwk8v"]
+bg_color = Color(0.964706, 0.701961, 0.282353, 1)
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 1)
+anti_aliasing_size = 0.733
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn67l"]
+bg_color = Color(0.964706, 0.701961, 0.282353, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+mouse_filter = 2
+script = ExtResource("1_xjaax")
+
+[node name="MenuScreen" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 420.2
+offset_top = 197.3
+offset_right = 460.2
+offset_bottom = 237.3
+scale = Vector2(1.985, 3.285)
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvhog")
+
+[node name="background_panel" type="Panel" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 3.27771
+offset_top = 2.11626
+offset_right = 48.2777
+offset_bottom = 120.116
+scale = Vector2(0.755151, 0.309263)
+theme_override_styles/panel = SubResource("StyleBoxFlat_6yloh")
+
+[node name="paused_panel" type="Panel" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 9.9857
+offset_top = 1.24244
+offset_right = 39.9857
+offset_bottom = 8.24244
+scale = Vector2(0.637461, 0.431533)
+theme_override_styles/panel = SubResource("StyleBoxFlat_lwk8v")
+
+[node name="Label" type="Label" parent="MenuScreen/paused_panel"]
+layout_mode = 0
+offset_left = 9.37176
+offset_top = -1.09514
+offset_right = 71.3718
+offset_bottom = 21.9049
+scale = Vector2(0.193822, 0.227784)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
+text = "PAUSED
+"
+
+[node name="X_label" type="Panel" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 17.2927
+offset_top = 37.5465
+offset_right = 57.2927
+offset_bottom = 77.5465
+scale = Vector2(0.148523, 0.0852149)
+theme_override_styles/panel = SubResource("StyleBoxFlat_mn67l")
+
+[node name="EscapeButton" type="Button" parent="MenuScreen/X_label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.776
+anchor_top = 0.019
+anchor_right = 0.969
+anchor_bottom = 0.123
+offset_left = -23.6953
+offset_top = 6.74194
+offset_right = 232.585
+offset_bottom = 266.582
+scale = Vector2(0.0977764, 0.0973262)
+theme_override_colors/font_hover_pressed_color = Color(0.811765, 0.12549, 0.211765, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+icon = ExtResource("2_lfywd")
+flat = true
+
+[node name="MenuButton" type="Button" parent="MenuScreen"]
+self_modulate = Color(0.823529, 0.933333, 0.196078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -27.4831
+offset_top = 7.18417
+offset_right = 335.917
+offset_bottom = 255.161
+scale = Vector2(0.0582742, 0.0199398)
+theme_override_colors/font_hover_pressed_color = Color(0.52549, 0.682353, 0.447059, 1)
+theme_override_colors/icon_normal_color = Color(0.576471, 0.443137, 0.403922, 1)
+icon = ExtResource("3_6y8hm")
+flat = true
+
+[node name="Label" type="Label" parent="MenuScreen/MenuButton"]
+layout_mode = 0
+offset_left = 124.93
+offset_top = 89.7881
+offset_right = 169.93
+offset_bottom = 112.788
+scale = Vector2(2.6296, 3.09718)
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsButton" type="Button" parent="MenuScreen"]
+self_modulate = Color(0.823529, 0.933333, 0.196078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -27.0801
+offset_top = 13.1507
+offset_right = 336.32
+offset_bottom = 261.128
+scale = Vector2(0.0582742, 0.0199398)
+theme_override_colors/font_hover_pressed_color = Color(0.52549, 0.682353, 0.447059, 1)
+theme_override_colors/icon_normal_color = Color(0.576471, 0.443137, 0.403922, 1)
+icon = ExtResource("3_6y8hm")
+flat = true
+
+[node name="Label" type="Label" parent="MenuScreen/OptionsButton"]
+layout_mode = 0
+offset_left = 102.875
+offset_top = 83.9666
+offset_right = 164.875
+offset_bottom = 106.967
+scale = Vector2(2.6296, 3.09718)
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="testButton" type="Button" parent="MenuScreen"]
+self_modulate = Color(0.823529, 0.933333, 0.196078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -27.735
+offset_top = 19.2998
+offset_right = 335.665
+offset_bottom = 267.277
+scale = Vector2(0.0582742, 0.0199398)
+theme_override_colors/font_hover_pressed_color = Color(0.52549, 0.682353, 0.447059, 1)
+theme_override_colors/icon_normal_color = Color(0.576471, 0.443137, 0.403922, 1)
+icon = ExtResource("3_6y8hm")
+flat = true
+
+[node name="Label" type="Label" parent="MenuScreen/testButton"]
+layout_mode = 0
+offset_left = 102.875
+offset_top = 83.9666
+offset_right = 164.875
+offset_bottom = 106.967
+scale = Vector2(2.6296, 3.09718)
+text = "Test1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="testButton2" type="Button" parent="MenuScreen"]
+self_modulate = Color(0.823529, 0.933333, 0.196078, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91
+anchor_right = 1.0
+anchor_bottom = 0.109
+offset_left = -27.4328
+offset_top = 25.449
+offset_right = 335.967
+offset_bottom = 273.426
+scale = Vector2(0.0582742, 0.0199398)
+theme_override_colors/font_hover_pressed_color = Color(0.52549, 0.682353, 0.447059, 1)
+theme_override_colors/icon_normal_color = Color(0.576471, 0.443137, 0.403922, 1)
+icon = ExtResource("3_6y8hm")
+flat = true
+
+[node name="Label" type="Label" parent="MenuScreen/testButton2"]
+layout_mode = 0
+offset_left = 102.875
+offset_top = 83.9666
+offset_right = 164.875
+offset_bottom = 106.967
+scale = Vector2(2.6296, 3.09718)
+text = "Test2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuScreen/X_label/EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="MenuScreen/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuScreen/OptionsButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuScreen/testButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuScreen/testButton2" to="." method="_on_menu_button_pressed"]
