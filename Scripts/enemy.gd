@@ -22,7 +22,7 @@ func _process(_delta):
 				$AnimatedSprite2D.play("dead")
 				queue_free()
 				print("enemy killed")
-			
+
 func _physics_process(_delta):
 	if player_attack == false:
 		if player_chase:

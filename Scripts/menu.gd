@@ -10,5 +10,9 @@ func _process(_delta):
 func _on_escape_button_pressed():
 	$MenuScreen.visible = false
 
+
 func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Start_Screen.tscn") 
+
+func _on_test_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")

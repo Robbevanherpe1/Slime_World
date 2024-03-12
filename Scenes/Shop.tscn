@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6b4t72pfrobg"]
+
+[ext_resource type="PackedScene" uid="uid://byoqclb22yxsc" path="res://LV1/Map/maps/shop.tmx" id="1_mef23"]
+[ext_resource type="Script" path="res://Scripts/Shop.gd" id="2_d3pdb"]
+[ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="2_vnaae"]
+[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_vyutb"]
+[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_7ofrp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hykqs"]
+size = Vector2(23.2595, 21.1129)
+
+[node name="shop" instance=ExtResource("1_mef23")]
+position = Vector2(-152, -129)
+scale = Vector2(2.26733, 1.59488)
+script = ExtResource("2_d3pdb")
+
+[node name="Player" parent="." index="3" instance=ExtResource("2_vnaae")]
+position = Vector2(229.345, 463.984)
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
+position = Vector2(1.52588e-05, 0)
+scale = Vector2(1, 1)
+
+[node name="menu" parent="Player" index="3" instance=ExtResource("3_vyutb")]
+
+[node name="stats" parent="Player" index="4" instance=ExtResource("4_7ofrp")]
+offset_left = -255.367
+offset_top = -194.372
+offset_right = -255.367
+offset_bottom = -194.372
+scale = Vector2(0.40748, 0.537376)
+
+[node name="Exit" type="Area2D" parent="." index="4"]
+scale = Vector2(0.655747, 0.920076)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" index="0"]
+position = Vector2(349.746, 511.104)
+scale = Vector2(1.6217, 1.77881)
+shape = SubResource("RectangleShape2D_hykqs")
+
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_exited" from="Exit" to="." method="_on_exit_body_exited"]

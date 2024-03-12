@@ -232,6 +232,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="MenuScreen/X_label/EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="MenuScreen/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="MenuScreen/OptionsButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="MenuScreen/testButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="MenuScreen/testButton2" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuScreen/testButton" to="." method="_on_test_button_pressed"]
