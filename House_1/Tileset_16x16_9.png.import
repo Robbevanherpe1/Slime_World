@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di2k2jcmul652"
-path="res://.godot/imported/atlas.png-8e4410e74c0bcb5dc127ee1d5a8e5fde.ctex"
+uid="uid://b1dnhabiil4vb"
+path="res://.godot/imported/Tileset_16x16_9.png-da3c46aec5d093e47b3debf3354b39dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LV1/Resources/Images_Map/atlas.png"
-dest_files=["res://.godot/imported/atlas.png-8e4410e74c0bcb5dc127ee1d5a8e5fde.ctex"]
+source_file="res://House_1/Tileset_16x16_9.png"
+dest_files=["res://.godot/imported/Tileset_16x16_9.png-da3c46aec5d093e47b3debf3354b39dc.ctex"]
 
 [params]
 

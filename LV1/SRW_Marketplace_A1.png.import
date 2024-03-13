@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c25gv58hl3lex"
-path="res://.godot/imported/atlas2.png-2834e098a3d514bd21a4ac8e2b597cc1.ctex"
+uid="uid://bqenaf3alnqxn"
+path="res://.godot/imported/SRW_Marketplace_A1.png-28bd0754b287a433a2d539d3f849c3d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LV1/Resources/Images_Map/atlas2.png"
-dest_files=["res://.godot/imported/atlas2.png-2834e098a3d514bd21a4ac8e2b597cc1.ctex"]
+source_file="res://LV1/SRW_Marketplace_A1.png"
+dest_files=["res://.godot/imported/SRW_Marketplace_A1.png-28bd0754b287a433a2d539d3f849c3d8.ctex"]
 
 [params]
 

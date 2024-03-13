@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6cgod8m17i4r"]
 
-[ext_resource type="PackedScene" uid="uid://83qs8lpn8p38" path="res://Scenes/Level_1.tscn" id="1_5536x"]
+[ext_resource type="PackedScene" uid="uid://bd53rgab4csvo" path="res://Scenes/Level_1.tscn" id="1_5536x"]
 [ext_resource type="Script" path="res://Scripts/Main_Scene.gd" id="1_isps6"]
 [ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="2_yr5av"]
 [ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_cqhf1"]
@@ -46,28 +46,29 @@ size_flags_vertical = 4
 
 [node name="Level_1" parent="." instance=ExtResource("1_5536x")]
 visibility_layer = 4
+position = Vector2(-1582, -1520)
 
 [node name="enemy1" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(826, 287)
+position = Vector2(1022, 233)
 
 [node name="enemy2" parent="Level_1" instance=ExtResource("5_1q4gm")]
 modulate = Color(1, 0.545098, 0.501961, 1)
 top_level = true
-position = Vector2(813, 577)
+position = Vector2(1029, 506)
 
 [node name="enemy3" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1521, 484)
+position = Vector2(1715, 431)
 
 [node name="enemy4" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1518, 454)
+position = Vector2(1709, 406)
 
 [node name="enemy5" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1400, 483)
+position = Vector2(1558, 425)
 
 [node name="enemy6" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1389, 124)
+position = Vector2(1595, 67)
