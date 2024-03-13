@@ -21,3 +21,8 @@ func _on_menu_button_pressed():
 func _on_test_button_pressed():
 	# If test button pressed show shop
 	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
+
+
+func _on_test_button_2_pressed():
+	# If test button pressed show House_1
+	get_tree().change_scene_to_file("res://Scenes/House_1.tscn")

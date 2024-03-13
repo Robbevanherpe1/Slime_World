@@ -39,6 +39,8 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 4
 
 [node name="menu" type="Control"]
+z_index = 10
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -233,3 +235,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="MenuScreen/X_label/EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="MenuScreen/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MenuScreen/testButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="MenuScreen/testButton2" to="." method="_on_test_button_2_pressed"]

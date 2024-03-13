@@ -21,7 +21,6 @@ zoom = Vector2(3, 3)
 process_callback = 0
 
 [node name="menuScreen" parent="Player" instance=ExtResource("3_cqhf1")]
-z_index = 1
 offset_left = -521.476
 offset_top = -305.103
 offset_right = -521.476
@@ -29,8 +28,6 @@ offset_bottom = -305.103
 scale = Vector2(1.14808, 1.11172)
 
 [node name="stats" parent="Player" instance=ExtResource("4_6qup3")]
-z_index = 4
-z_as_relative = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
