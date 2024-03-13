@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://fx8e0vox60ta"]
+
+[ext_resource type="Script" path="res://Scripts/Npc_shop.gd" id="1_6vpot"]
+[ext_resource type="Texture2D" uid="uid://cxjxjq4qc3wdd" path="res://Assets/game/merchant.png" id="1_gl1e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b5wv"]
+atlas = ExtResource("1_gl1e3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfn0f"]
+atlas = ExtResource("1_gl1e3")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc7lp"]
+atlas = ExtResource("1_gl1e3")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvo6b"]
+atlas = ExtResource("1_gl1e3")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st5y3"]
+atlas = ExtResource("1_gl1e3")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gexhp"]
+atlas = ExtResource("1_gl1e3")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msgr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b5wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfn0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc7lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvo6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st5y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gexhp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c114q"]
+size = Vector2(12, 5.875)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+scale = Vector2(1.2, 1.2)
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_6vpot")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_msgr4")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_c114q")
