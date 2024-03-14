@@ -14,32 +14,34 @@ func _ready():
 func _process(_delta):
 	# Set direction to vector 4 of left right up down
 	direction =Input.get_vector("P_left","P_right","P_up","P_down")
-	
-	# Set health and stamina bar value
-	$stats/ColorRect/health_bar_player/health_player.text = ("%s / 100") % player_health
-	$stats/ColorRect/health_bar_player.value = player_health
-	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
-	$stats/ColorRect/stamina_bar_player.value = player_stamina
-	
-	# Show actionkey when in action zone
-	$ActionKey.visible = Global.get_player_actionkey()
-	
-	# If fight pressed remove stamina else add
-	if Input.is_action_just_pressed("fight"):
-		remove_stamina()
-	else:
-		add_stamina()
-
-	# If player_health <=0 change sceen to start and reset player position
-	if player_health <=0:
-		Global.set_player_position(Global.player_position_default)
-		get_tree().change_scene_to_file("res://Scenes/Start_Screen.tscn")
+	actionkey()
+	set_player_bars()
+	change_stamina()
+	player_dead()
 
 func _physics_process(_delta):
 	# set velocity then move with move_and_slide(velocity)
 	velocity = direction * speed
 	move_and_slide()
-	
+	show_animation()
+
+#actionkeys
+				
+func actionkey():
+	# Show actionkey when in action zone
+	$ActionKey.visible = Global.get_player_actionkey()
+
+#player state
+
+func player_dead():
+	# If player_health <=0 change sceen to start and reset player position
+	if player_health <=0:
+		Global.set_player_position(Global.player_position_default)
+		get_tree().change_scene_to_file("res://Scenes/Start_Screen.tscn")
+
+#animations
+
+func show_animation():
 	# If fight pressed show fight animation else show normal animations
 	if Input.is_action_pressed("fight"):
 		if direction == Vector2.ZERO:
@@ -63,7 +65,23 @@ func _physics_process(_delta):
 				$AnimatedSprite2D.play("up")
 			elif direction.y > 0:
 				$AnimatedSprite2D.play("down")
-				
+
+#stamina and health
+
+func set_player_bars():
+	# Set health and stamina bar value
+	$stats/ColorRect/health_bar_player/health_player.text = ("%s / 100") % player_health
+	$stats/ColorRect/health_bar_player.value = player_health
+	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
+	$stats/ColorRect/stamina_bar_player.value = player_stamina
+
+func change_stamina():
+	# If fight pressed remove stamina else add
+	if Input.is_action_just_pressed("fight"):
+		remove_stamina()
+	else:
+		add_stamina()
+
 func add_stamina():
 	# Set stamina timer if 100 add +10 stamina
 	stamina_timer +=1
