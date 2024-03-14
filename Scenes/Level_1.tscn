@@ -3525,7 +3525,16 @@ scale = Vector2(0.874406, 0.604122)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="border" type="TileMap" parent="." index="9"]
+[node name="House2" type="Area2D" parent="." index="9"]
+position = Vector2(96.5, 81.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House2" index="0"]
+position = Vector2(1191.5, 993)
+scale = Vector2(0.874406, 0.604122)
+shape = SubResource("RectangleShape2D_n663u")
+debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
+
+[node name="border" type="TileMap" parent="." index="10"]
 visible = false
 tile_set = SubResource("TileSet_togjq")
 format = 2
@@ -3535,3 +3544,5 @@ layer_0/tile_data = PackedInt32Array(4456526, 1179648, 29, 4456527, 1179648, 29,
 [connection signal="body_exited" from="Shop" to="." method="_on_shop_body_exited"]
 [connection signal="body_entered" from="House1" to="." method="_on_house_1_body_entered"]
 [connection signal="body_exited" from="House1" to="." method="_on_house_1_body_exited"]
+[connection signal="body_entered" from="House2" to="." method="_on_house_2_body_entered"]
+[connection signal="body_exited" from="House2" to="." method="_on_house_2_body_exited"]

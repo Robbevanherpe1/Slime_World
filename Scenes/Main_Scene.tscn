@@ -47,25 +47,25 @@ position = Vector2(-1582, -1520)
 
 [node name="enemy1" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1022, 233)
+position = Vector2(1016, 221)
 
 [node name="enemy2" parent="Level_1" instance=ExtResource("5_1q4gm")]
 modulate = Color(1, 0.545098, 0.501961, 1)
 top_level = true
-position = Vector2(1029, 506)
+position = Vector2(1023, 507)
 
 [node name="enemy3" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1715, 431)
+position = Vector2(1695, 428)
 
 [node name="enemy4" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1709, 406)
+position = Vector2(1695, 397)
 
 [node name="enemy5" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1558, 425)
+position = Vector2(1533, 428)
 
 [node name="enemy6" parent="Level_1" instance=ExtResource("5_1q4gm")]
 top_level = true
-position = Vector2(1595, 67)
+position = Vector2(1593, 58)

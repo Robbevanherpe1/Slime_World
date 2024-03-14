@@ -16,6 +16,8 @@ func _process(_delta):
 					get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
 				"House_1":
 					get_tree().change_scene_to_file("res://Scenes/House_1.tscn")
+				"House_2":
+					get_tree().change_scene_to_file("res://Scenes/House_2.tscn")
 				_:
 					get_tree().change_scene_to_file("res://Scenes/Main_Scene.tscn")
 				
@@ -33,6 +35,13 @@ func leave_building(body):
 		Global.set_player_actionkey(false)
 		player_enter = false
 
+func _on_shop_body_entered(body):
+	enter_building(body)
+	building_type = "Shop"
+
+func _on_shop_body_exited(body):
+	leave_building(body)
+	
 func _on_house_1_body_entered(body):
 	enter_building(body)
 	building_type = "House_1"
@@ -40,9 +49,9 @@ func _on_house_1_body_entered(body):
 func _on_house_1_body_exited(body):
 	leave_building(body)
 
-func _on_shop_body_entered(body):
+func _on_house_2_body_entered(body):
 	enter_building(body)
-	building_type = "Shop"
+	building_type = "House_2"
 
-func _on_shop_body_exited(body):
+func _on_house_2_body_exited(body):
 	leave_building(body)
