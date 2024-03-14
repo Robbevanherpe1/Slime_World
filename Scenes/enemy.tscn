@@ -177,8 +177,7 @@ script = ExtResource("1_6gsg4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v7dba")
-animation = &"attack"
-frame_progress = 0.195378
+animation = &"idle"
 
 [node name="detection _area" type="Area2D" parent="."]
 collision_layer = 2

@@ -16,8 +16,10 @@ func _process(_delta):
 			match building_type:
 				"Shop":
 					get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
+				"WeaponShop":
+					get_tree().change_scene_to_file("res://Scenes/weapon_shop.tscn")
 				"House_1":
-					get_tree().change_scene_to_file("res://Scenes/House_1.tscn")
+					get_tree().change_scene_to_file("res://Scenes/House_2.tscn")
 				"House_2":
 					get_tree().change_scene_to_file("res://Scenes/House_2.tscn")
 				_:
@@ -74,7 +76,12 @@ func _on_shop_body_entered(body):
 
 func _on_shop_body_exited(body):
 	leave_building(body)
+	
+func _on_weapon_shop_body_entered(body):
+	enter_building(body,"WeaponShop")
 
+func _on_weapon_shop_body_exited(body):
+	leave_building(body)
 
 func _on_house_1_body_entered(body):
 	enter_building(body,"House_1")
@@ -107,3 +114,4 @@ func _on_tunnel_3_body_entered(body):
 
 func _on_tunnel_3_body_exited(body):
 	leave_tunnel(body)
+
