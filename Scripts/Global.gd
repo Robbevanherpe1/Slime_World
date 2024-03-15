@@ -30,6 +30,10 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
+	
+func _exit_tree():
+	save_game()
+
 
 func save_game():
 	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
