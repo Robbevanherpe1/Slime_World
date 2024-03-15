@@ -175,7 +175,7 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="testButton" type="Button" parent="MenuScreen"]
+[node name="SaveButton" type="Button" parent="MenuScreen"]
 self_modulate = Color(0.823529, 0.933333, 0.196078, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -192,14 +192,14 @@ theme_override_colors/icon_normal_color = Color(0.576471, 0.443137, 0.403922, 1)
 icon = ExtResource("3_6y8hm")
 flat = true
 
-[node name="Label" type="Label" parent="MenuScreen/testButton"]
+[node name="Label" type="Label" parent="MenuScreen/SaveButton"]
 layout_mode = 0
-offset_left = 102.875
-offset_top = 83.9666
-offset_right = 164.875
-offset_bottom = 106.967
+offset_left = 74.3462
+offset_top = 82.4422
+offset_right = 160.346
+offset_bottom = 105.443
 scale = Vector2(2.6296, 3.09718)
-text = "Test1"
+text = "Save Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -234,5 +234,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="MenuScreen/X_label/EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="MenuScreen/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="MenuScreen/testButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="MenuScreen/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="MenuScreen/testButton2" to="." method="_on_test_button_2_pressed"]

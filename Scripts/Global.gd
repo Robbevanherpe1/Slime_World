@@ -22,4 +22,24 @@ func set_player_coins(amount):
 
 func get_player_coins():
 	return player_coins
+
+
+#Save Game
+
+func _ready():
+	load_data()
+
+var save_path ="user://save_game.save"
+
+func save_game():
+	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
+	save_file.store_var(player_coins)
 	
+	
+func load_data():
+	if FileAccess.file_exists(save_path):
+		var file =FileAccess.open(save_path, FileAccess.READ)
+		player_coins = file.get_var(player_coins)
+	else:
+		print("nodate")
+		player_coins =0

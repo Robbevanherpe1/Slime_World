@@ -26,3 +26,7 @@ func _on_test_button_pressed():
 func _on_test_button_2_pressed():
 	# If test button pressed show House_1
 	get_tree().change_scene_to_file("res://Scenes/House_1.tscn")
+
+
+func _on_save_button_pressed():
+	Global.save_game()

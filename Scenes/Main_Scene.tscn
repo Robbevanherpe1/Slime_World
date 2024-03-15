@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_6qup3"]
 [ext_resource type="PackedScene" uid="uid://wnbpgowncu6p" path="res://Scenes/enemy.tscn" id="5_1q4gm"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["Persist"]]
 script = ExtResource("1_isps6")
 
 [node name="Player" parent="." instance=ExtResource("2_yr5av")]
