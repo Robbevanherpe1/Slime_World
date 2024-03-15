@@ -1,7 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://6e0wo5c0bi48"]
+[gd_scene load_steps=44 format=3 uid="uid://6e0wo5c0bi48"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4f6cn"]
 [ext_resource type="Texture2D" uid="uid://7twujmgumnue" path="res://Assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_8vglv"]
+[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_rjfqk"]
+[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_2knho"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ysqg"]
 bg_color = Color(0.552941, 0.34902, 0, 0.329412)
@@ -341,3 +343,19 @@ animation = &"idle"
 z_as_relative = false
 position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_rw7xs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="menu" parent="." instance=ExtResource("3_rjfqk")]
+offset_left = -458.0
+offset_top = -263.0
+offset_right = -458.0
+offset_bottom = -263.0
+
+[node name="stats" parent="." instance=ExtResource("4_2knho")]
+offset_left = -193.0
+offset_top = -106.0
+offset_right = -193.0
+offset_bottom = -106.0
+scale = Vector2(0.486153, 0.428866)

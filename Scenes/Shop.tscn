@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4e76l17ton3j"]
+[gd_scene load_steps=9 format=3 uid="uid://b4e76l17ton3j"]
 
 [ext_resource type="PackedScene" uid="uid://bb5cdyfo6ag0x" path="res://Shop/shop_inside.tmx" id="1_eugqf"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="2_d3pdb"]
 [ext_resource type="Texture2D" uid="uid://dv1isq1trvskx" path="res://Assets/SBS - Isometric Grid Pack/Tiles/Tile_Type_A-128x64.png" id="3_hx37m"]
 [ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="3_vecvc"]
-[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="4_wi5p7"]
-[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="5_buscu"]
 [ext_resource type="PackedScene" uid="uid://fx8e0vox60ta" path="res://Scenes/Npc_shop.tscn" id="7_6o4xa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cx5gh"]
@@ -139,31 +137,6 @@ top_level = true
 visibility_layer = 2
 position = Vector2(241, 264)
 scale = Vector2(1.06237, 0.957054)
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
-zoom = Vector2(3, 3)
-process_callback = 0
-
-[node name="menuScreen" parent="Player" index="3" instance=ExtResource("4_wi5p7")]
-offset_left = -521.476
-offset_top = -305.103
-offset_right = -521.476
-offset_bottom = -305.103
-scale = Vector2(1.14808, 1.11172)
-
-[node name="stats" parent="Player" index="4" instance=ExtResource("5_buscu")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -180.728
-offset_top = -109.712
-offset_right = -180.728
-offset_bottom = -109.712
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.33735, 0.355759)
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="foreground" parent="." index="2"]
 z_index = 3

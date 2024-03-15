@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6cgod8m17i4r"]
+[gd_scene load_steps=5 format=3 uid="uid://c6cgod8m17i4r"]
 
 [ext_resource type="PackedScene" uid="uid://bd53rgab4csvo" path="res://Scenes/Level_1.tscn" id="1_5536x"]
 [ext_resource type="Script" path="res://Scripts/Main_Scene.gd" id="1_isps6"]
 [ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="2_yr5av"]
-[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_cqhf1"]
-[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_6qup3"]
 [ext_resource type="PackedScene" uid="uid://wnbpgowncu6p" path="res://Scenes/enemy.tscn" id="5_1q4gm"]
 
 [node name="Game" type="Node2D" groups=["Persist"]]
@@ -15,31 +13,6 @@ top_level = true
 visibility_layer = 2
 position = Vector2(645, 160)
 scale = Vector2(1.06237, 0.957054)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
-process_callback = 0
-
-[node name="menuScreen" parent="Player" instance=ExtResource("3_cqhf1")]
-offset_left = -521.476
-offset_top = -305.103
-offset_right = -521.476
-offset_bottom = -305.103
-scale = Vector2(1.14808, 1.11172)
-
-[node name="stats" parent="Player" instance=ExtResource("4_6qup3")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -180.728
-offset_top = -109.712
-offset_right = -180.728
-offset_bottom = -109.712
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.33735, 0.355759)
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Level_1" parent="." instance=ExtResource("1_5536x")]
 visibility_layer = 4

@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddb0el1qq108m"]
+[gd_scene load_steps=8 format=3 uid="uid://ddb0el1qq108m"]
 
 [ext_resource type="PackedScene" uid="uid://cnpp03a85gyce" path="res://House_2/House_2.tmx" id="1_vxuy0"]
 [ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="2_7ju1x"]
 [ext_resource type="Texture2D" uid="uid://dydawqygubv7f" path="res://House_2/atlas_16x.png" id="2_dmnnl"]
 [ext_resource type="Script" path="res://Scripts/House_2.gd" id="2_ysvut"]
-[ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_cfvi1"]
-[ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_136in"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f0v6"]
 size = Vector2(23.2595, 21.1129)
@@ -2269,31 +2267,6 @@ top_level = true
 visibility_layer = 2
 position = Vector2(262, 488)
 scale = Vector2(1.06237, 0.957054)
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
-zoom = Vector2(3, 3)
-process_callback = 0
-
-[node name="menuScreen" parent="Player" index="3" instance=ExtResource("3_cfvi1")]
-offset_left = -521.476
-offset_top = -305.103
-offset_right = -521.476
-offset_bottom = -305.103
-scale = Vector2(1.14808, 1.11172)
-
-[node name="stats" parent="Player" index="4" instance=ExtResource("4_136in")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -180.728
-offset_top = -109.712
-offset_right = -180.728
-offset_bottom = -109.712
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.33735, 0.355759)
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Exit" type="Area2D" parent="." index="3"]
 position = Vector2(210, 148)
