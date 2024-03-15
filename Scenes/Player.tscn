@@ -354,8 +354,8 @@ offset_right = -458.0
 offset_bottom = -263.0
 
 [node name="stats" parent="." instance=ExtResource("4_2knho")]
-offset_left = -193.0
-offset_top = -106.0
-offset_right = -193.0
-offset_bottom = -106.0
-scale = Vector2(0.486153, 0.428866)
+offset_left = -292.0
+offset_top = -175.0
+offset_right = -292.0
+offset_bottom = -175.0
+scale = Vector2(0.512223, 0.510873)

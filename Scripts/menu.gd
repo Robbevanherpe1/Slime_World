@@ -18,15 +18,9 @@ func _on_menu_button_pressed():
 	Global.set_player_position(Global.player_position_default) 
 	get_tree().change_scene_to_file("res://Scenes/Start_Screen.tscn")
 
-func _on_test_button_pressed():
-	# If test button pressed show shop
-	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
-
-
-func _on_test_button_2_pressed():
-	# If test button pressed show House_1
-	get_tree().change_scene_to_file("res://Scenes/House_1.tscn")
-
-
 func _on_save_button_pressed():
 	Global.save_game()
+
+func _on_quit_button_pressed():
+	# If quit button pressed quit game
+	get_tree().quit()
