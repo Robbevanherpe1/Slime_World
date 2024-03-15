@@ -162,13 +162,12 @@ position = Vector2(30.4659, 8.76461)
 scale = Vector2(0.162789, 0.0537452)
 texture = ExtResource("2_bs06q")
 
-[node name="Label" type="Label" parent="ColorRect/Coins"]
+[node name="coins_amount" type="Label" parent="ColorRect/Coins"]
 layout_mode = 0
 offset_left = 36.5591
 offset_top = 2.19115
 offset_right = 106.559
 offset_bottom = 25.1912
 scale = Vector2(1.85701, 0.643849)
-text = "120"
 horizontal_alignment = 1
 vertical_alignment = 1

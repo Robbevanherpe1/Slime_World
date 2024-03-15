@@ -3,6 +3,7 @@ extends CharacterBody2D
 var direction:Vector2 = Vector2.ZERO
 
 var speed = 50
+var speed_animation = 1
 var sprint = false
 var player_health = 100
 var player_stamina = 100
@@ -24,19 +25,23 @@ func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
 	show_animation()
-	
+
+#player movement
+
 func movement():
 	# Set direction to vector 4 of left right up down
 	direction =Input.get_vector("P_left","P_right","P_up","P_down")
 	
 	#set sprint speed and normal speed
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint"): 
 		speed = 100
+		speed_animation = 2
 	else :
 		speed = 50
+		speed_animation = 1
 
 #actionkeys
-				
+
 func actionkey():
 	# Show actionkey when in action zone
 	$ActionKey.visible = Global.get_player_actionkey()
@@ -65,16 +70,16 @@ func show_animation():
 			elif direction.y > 0:
 				$AnimatedSprite2D.play("fight_down")
 	else:
-		if direction == Vector2.ZERO:
-			$AnimatedSprite2D.play("idle")
-		else:
-			if direction.x != 0:
-				$AnimatedSprite2D.flip_h = direction.x < 0
-				$AnimatedSprite2D.play("walk")
-			elif direction.y < 0:
-				$AnimatedSprite2D.play("up")
-			elif direction.y > 0:
-				$AnimatedSprite2D.play("down")
+			if direction == Vector2.ZERO:
+				$AnimatedSprite2D.play("idle")
+			else:
+				if direction.x != 0:
+					$AnimatedSprite2D.flip_h = direction.x < 0
+					$AnimatedSprite2D.play("walk",speed_animation)
+				elif direction.y < 0:
+					$AnimatedSprite2D.play("up",speed_animation)
+				elif direction.y > 0:
+					$AnimatedSprite2D.play("down",speed_animation)
 
 #stamina and health
 
@@ -84,6 +89,7 @@ func set_player_bars():
 	$stats/ColorRect/health_bar_player.value = player_health
 	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
 	$stats/ColorRect/stamina_bar_player.value = player_stamina
+	$stats/ColorRect/Coins/coins_amount.text = ("%s") % Global.get_player_coins()
 
 func change_stamina():
 	# If fight pressed remove stamina else add

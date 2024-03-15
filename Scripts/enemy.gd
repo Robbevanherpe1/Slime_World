@@ -22,8 +22,10 @@ func _process(_delta):
 				attack_player()
 		else:
 				$AnimatedSprite2D.play("dead")
+				Global.set_player_coins(1)
 				queue_free()
 				print("enemy killed")
+				print("1 coin added")
 
 func _physics_process(_delta):
 	# If player not in attack range play walking animations else attack animantions
