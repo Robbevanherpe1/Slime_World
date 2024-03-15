@@ -3525,7 +3525,16 @@ scale = Vector2(0.874406, 0.604122)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="House1" type="Area2D" parent="." index="9"]
+[node name="Pub" type="Area2D" parent="." index="9"]
+position = Vector2(400, -398)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pub" index="0"]
+position = Vector2(1288, 1232.5)
+scale = Vector2(0.874406, 0.604122)
+shape = SubResource("RectangleShape2D_n663u")
+debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
+
+[node name="House1" type="Area2D" parent="." index="10"]
 position = Vector2(-64, 64.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House1" index="0"]
@@ -3534,7 +3543,7 @@ scale = Vector2(0.874406, 0.604122)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="House2" type="Area2D" parent="." index="10"]
+[node name="House2" type="Area2D" parent="." index="11"]
 position = Vector2(96.5, 81.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House2" index="0"]
@@ -3543,7 +3552,7 @@ scale = Vector2(0.874406, 0.604122)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="Tunnel1" type="Area2D" parent="." index="11"]
+[node name="Tunnel1" type="Area2D" parent="." index="12"]
 position = Vector2(6.5, -99.5)
 scale = Vector2(0.996727, 0.999648)
 
@@ -3553,7 +3562,7 @@ scale = Vector2(0.838846, 0.778412)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="Tunnel2" type="Area2D" parent="." index="12"]
+[node name="Tunnel2" type="Area2D" parent="." index="13"]
 position = Vector2(22, 13.5)
 scale = Vector2(0.996727, 0.999648)
 
@@ -3563,7 +3572,7 @@ scale = Vector2(0.838846, 0.778412)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="Tunnel3" type="Area2D" parent="." index="13"]
+[node name="Tunnel3" type="Area2D" parent="." index="14"]
 position = Vector2(310, -162)
 scale = Vector2(0.996727, 0.999648)
 
@@ -3573,7 +3582,7 @@ scale = Vector2(0.838846, 0.778412)
 shape = SubResource("RectangleShape2D_n663u")
 debug_color = Color(0.784314, 0.282353, 0.819608, 0.627451)
 
-[node name="border" type="TileMap" parent="." index="14"]
+[node name="border" type="TileMap" parent="." index="15"]
 visible = false
 tile_set = SubResource("TileSet_togjq")
 format = 2
@@ -3583,6 +3592,8 @@ layer_0/tile_data = PackedInt32Array(4456526, 1179648, 29, 4456527, 1179648, 29,
 [connection signal="body_exited" from="Shop" to="." method="_on_shop_body_exited"]
 [connection signal="body_entered" from="WeaponShop" to="." method="_on_weapon_shop_body_entered"]
 [connection signal="body_exited" from="WeaponShop" to="." method="_on_weapon_shop_body_exited"]
+[connection signal="body_entered" from="Pub" to="." method="_on_pub_body_entered"]
+[connection signal="body_exited" from="Pub" to="." method="_on_pub_body_exited"]
 [connection signal="body_entered" from="House1" to="." method="_on_house_1_body_entered"]
 [connection signal="body_exited" from="House1" to="." method="_on_house_1_body_exited"]
 [connection signal="body_entered" from="House2" to="." method="_on_house_2_body_entered"]
