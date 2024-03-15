@@ -3,6 +3,7 @@ extends CharacterBody2D
 var direction:Vector2 = Vector2.ZERO
 
 var speed = 50
+var sprint = false
 var player_health = 100
 var player_stamina = 100
 var stamina_timer = 0
@@ -12,8 +13,7 @@ func _ready():
 	self.add_to_group("Player")
 
 func _process(_delta):
-	# Set direction to vector 4 of left right up down
-	direction =Input.get_vector("P_left","P_right","P_up","P_down")
+	movement()
 	actionkey()
 	set_player_bars()
 	change_stamina()
@@ -24,6 +24,16 @@ func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
 	show_animation()
+	
+func movement():
+	# Set direction to vector 4 of left right up down
+	direction =Input.get_vector("P_left","P_right","P_up","P_down")
+	
+	#set sprint speed and normal speed
+	if Input.is_action_pressed("sprint"):
+		speed = 100
+	else :
+		speed = 50
 
 #actionkeys
 				
