@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://43v2elgh0y6l"]
+[gd_scene load_steps=21 format=3 uid="uid://43v2elgh0y6l"]
 
 [ext_resource type="Texture2D" uid="uid://72x8fdm8t25c" path="res://Assets/game/used weapons/sword2.png" id="1_qm7se"]
+[ext_resource type="Script" path="res://Scripts/item_shop_panel.gd" id="1_sp6ns"]
 [ext_resource type="Texture2D" uid="uid://bd2x7vr4jg4t3" path="res://Assets/game/used weapons/sword3.png" id="2_32670"]
 [ext_resource type="Texture2D" uid="uid://bjhgx8ku05aqg" path="res://Assets/game/used weapons/sword4.png" id="3_5d608"]
 [ext_resource type="Texture2D" uid="uid://ccjya4korqcq0" path="res://Assets/game/used weapons/sword5.png" id="4_wo0i5"]
@@ -14,22 +15,93 @@
 [ext_resource type="Texture2D" uid="uid://oouluv0htf0s" path="res://Assets/game/used weapons/bow8.png" id="12_2gwi1"]
 [ext_resource type="Texture2D" uid="uid://c1rex2x3s4dny" path="res://Assets/game/used weapons/arrow2.png" id="13_vpdsk"]
 [ext_resource type="Texture2D" uid="uid://bmslf5l2tqck" path="res://Assets/game/used weapons/shield2.png" id="14_gc7w5"]
+[ext_resource type="Texture2D" uid="uid://d3ysv0o6lqlnc" path="res://Assets/HyperCasual-Game-UI/coinIcon.png" id="16_ecjwd"]
 
-[node name="Control" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56blj"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+shadow_size = 1
+anti_aliasing_size = 0.398
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6swm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bftpu"]
+bg_color = Color(0.376471, 0.623529, 0.85098, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spt27"]
+bg_color = Color(0.231373, 0.466667, 0.678431, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="Item_shop_panel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_sp6ns")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+scale = Vector2(36.3558, 24.116)
+theme_override_styles/panel = SubResource("StyleBoxFlat_56blj")
+
+[node name="Coins" type="Panel" parent="."]
+offset_left = 150.0
+offset_top = 230.0
+offset_right = 317.0
+offset_bottom = 248.0
+scale = Vector2(1.5, 4.176)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="Coins"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="coins_amount" type="Label" parent="Coins"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Coins"]
+layout_mode = 0
+offset_left = -13.3333
+offset_top = -16.7624
+offset_right = 41.6667
+offset_bottom = 6.23755
+scale = Vector2(1.68783, 0.600855)
+text = "Coins:"
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_top = -13.0
-offset_right = 123.0
-offset_bottom = 80.0
-scale = Vector2(10, 10)
+offset_left = 530.0
+offset_top = 90.0
+offset_right = 628.0
+offset_bottom = 183.0
+scale = Vector2(9, 9)
 auto_height = true
 item_count = 14
 max_columns = 4
@@ -63,3 +135,350 @@ item_12/text = ""
 item_12/icon = ExtResource("13_vpdsk")
 item_13/text = ""
 item_13/icon = ExtResource("14_gc7w5")
+
+[node name="sword1" type="Panel" parent="."]
+offset_left = 540.0
+offset_top = 280.0
+offset_right = 707.0
+offset_bottom = 298.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="sword1"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="sword1"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sword2" type="Panel" parent="."]
+offset_left = 730.0
+offset_top = 280.0
+offset_right = 897.0
+offset_bottom = 298.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="sword2"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="sword2"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+text = "500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sword3" type="Panel" parent="."]
+offset_left = 900.0
+offset_top = 280.0
+offset_right = 1067.0
+offset_bottom = 298.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="sword3"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="sword3"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+text = "5000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sword4" type="Panel" parent="."]
+offset_left = 1090.0
+offset_top = 280.0
+offset_right = 1257.0
+offset_bottom = 298.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="sword4"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="sword4"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 1.14441e-05
+offset_right = 120.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "20 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sword5" type="Panel" parent="."]
+offset_left = 550.0
+offset_top = 460.0
+offset_right = 717.0
+offset_bottom = 478.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="sword5"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="sword5"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "100 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow1" type="Panel" parent="."]
+offset_left = 740.0
+offset_top = 450.0
+offset_right = 907.0
+offset_bottom = 468.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow1"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow1"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow2" type="Panel" parent="."]
+offset_left = 930.0
+offset_top = 450.0
+offset_right = 1097.0
+offset_bottom = 468.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow2"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow2"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+text = "10 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow3" type="Panel" parent="."]
+offset_left = 1100.0
+offset_top = 450.0
+offset_right = 1267.0
+offset_bottom = 468.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow3"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow3"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.00272e-05
+offset_right = 120.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "40 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow4" type="Panel" parent="."]
+offset_left = 560.0
+offset_top = 630.0
+offset_right = 727.0
+offset_bottom = 648.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow4"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow4"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.00272e-05
+offset_right = 120.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "80 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow5" type="Panel" parent="."]
+offset_left = 740.0
+offset_top = 630.0
+offset_right = 907.0
+offset_bottom = 648.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow5"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow5"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.00272e-05
+offset_right = 120.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "150 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow6" type="Panel" parent="."]
+offset_left = 920.0
+offset_top = 630.0
+offset_right = 1087.0
+offset_bottom = 648.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow6"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow6"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.00272e-05
+offset_right = 120.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "350 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bow7" type="Panel" parent="."]
+offset_left = 1100.0
+offset_top = 630.0
+offset_right = 1267.0
+offset_bottom = 648.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="bow7"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="bow7"]
+layout_mode = 0
+offset_left = 62.5
+offset_top = 2.00272e-05
+offset_right = 148.5
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "1 000 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arrow1" type="Panel" parent="."]
+offset_left = 550.0
+offset_top = 810.0
+offset_right = 717.0
+offset_bottom = 828.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="arrow1"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="arrow1"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+text = "5000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="armor1" type="Panel" parent="."]
+offset_left = 730.0
+offset_top = 810.0
+offset_right = 897.0
+offset_bottom = 828.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6swm")
+
+[node name="CoinIcon" type="Sprite2D" parent="armor1"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("16_ecjwd")
+
+[node name="price" type="Label" parent="armor1"]
+layout_mode = 0
+offset_left = 37.5
+offset_top = 3.71933e-05
+offset_right = 107.5
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+text = "2500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 750.0
+offset_right = 216.0
+offset_bottom = 781.0
+scale = Vector2(5.07107, 2.89641)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bftpu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_spt27")
+text = "Buy"

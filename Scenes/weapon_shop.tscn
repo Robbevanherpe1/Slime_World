@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://exhlv308fkpr"]
+[gd_scene load_steps=10 format=3 uid="uid://exhlv308fkpr"]
 
 [ext_resource type="PackedScene" uid="uid://b13mqgiun6n2o" path="res://WeaponShop/WeaponShop.tmx" id="1_chvty"]
 [ext_resource type="Texture2D" uid="uid://c4bjpcnf2rgm2" path="res://WeaponShop/atlas_16x.png" id="2_8o0bs"]
 [ext_resource type="PackedScene" uid="uid://6e0wo5c0bi48" path="res://Scenes/Player.tscn" id="2_4221i"]
 [ext_resource type="Script" path="res://Scripts/weapon_shop.gd" id="2_r7xgy"]
 [ext_resource type="PackedScene" uid="uid://fx8e0vox60ta" path="res://Scenes/Npc_shop.tscn" id="5_7vp77"]
+[ext_resource type="PackedScene" uid="uid://43v2elgh0y6l" path="res://Scenes/item_shop_panel.tscn" id="6_scg4u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1qgr3"]
 texture = ExtResource("2_8o0bs")
@@ -2302,6 +2303,14 @@ scale = Vector2(0.649498, 0.926438)
 position = Vector2(600.464, 605.545)
 scale = Vector2(3.0891, 1.38624)
 shape = SubResource("RectangleShape2D_kvqoc")
+
+[node name="Item_shop_panel" parent="." index="7" instance=ExtResource("6_scg4u")]
+z_index = 9
+z_as_relative = false
+offset_left = 615.0
+offset_top = 535.0
+offset_right = 615.0
+offset_bottom = 535.0
 
 [connection signal="body_entered" from="BuyItems" to="." method="_on_buy_items_body_entered"]
 [connection signal="body_exited" from="BuyItems" to="." method="_on_buy_items_body_exited"]
