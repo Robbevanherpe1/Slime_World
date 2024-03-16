@@ -23,8 +23,8 @@ func _on_exit_body_exited(body):
 
 
 func _on_buy_items_body_entered(body):
-	Global.set_player_sword("res://Assets/game/used weapons/tile060.png")
+	Global.set_player_sword("res://Assets/game/used weapons/sword2.png")
 
 
 func _on_buy_items_body_exited(body):
-	pass # Replace with function body.
+	pass

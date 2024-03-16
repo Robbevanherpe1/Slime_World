@@ -37,11 +37,11 @@ script = ExtResource("1_gpnil")
 [node name="StartBox" type="Panel" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 369.0
-offset_top = 216.0
-offset_right = 609.0
-offset_bottom = 350.0
-scale = Vector2(1.65768, 1.61335)
+offset_left = 684.0
+offset_top = 450.0
+offset_right = 924.0
+offset_bottom = 584.0
+scale = Vector2(2.21807, 2.15729)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ln3ps")
 
 [node name="Panel" type="Panel" parent="StartBox"]
@@ -111,8 +111,8 @@ scale = Vector2(3.6726, 2.84692)
 text = "PLAY "
 
 [node name="StartScreenBackground" type="Sprite2D" parent="."]
-position = Vector2(579, 324)
-scale = Vector2(1.50031, 1.49355)
+position = Vector2(965, 544)
+scale = Vector2(2.96252, 2.7259)
 texture = ExtResource("3_j08eb")
 
 [connection signal="pressed" from="StartBox/playGame" to="." method="_on_play_game_pressed"]

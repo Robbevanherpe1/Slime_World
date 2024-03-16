@@ -9,7 +9,7 @@ var player_coins = 0
 var player_sword = "res://Assets/game/used weapons/sword1.png"
 var player_shield = "res://Assets/game/used weapons/shield1.png"
 var player_bow = "res://Assets/game/used weapons/bow1.png"
-var player_arrow ="res://Assets/game/used weapons/arrow1.png"
+var player_arrow = "res://Assets/game/used weapons/arrow1.png"
 
 
 func set_player_position(value):
@@ -36,6 +36,7 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
+	print(player_sword)
 	
 func _exit_tree():
 	save_game()
@@ -43,13 +44,25 @@ func _exit_tree():
 func save_game():
 	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
 	save_file.store_var(player_coins)
+	save_file.store_string(player_sword + "\n")
+	save_file.store_string(player_shield + "\n")
+	save_file.store_string(player_bow + "\n")
+	save_file.store_string(player_arrow)
 	save_file.close()
 
 func load_data():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		player_coins = file.get_var()
+		player_sword = file.get_line()
+		player_shield = file.get_line()
+		player_bow = file.get_line()
+		player_arrow = file.get_line()
 		file.close()
 	else:
 		print("No data found.")
 		player_coins = 0
+		player_sword = "res://Assets/game/used weapons/sword1.png"
+		player_shield = "res://Assets/game/used weapons/shield1.png"
+		player_bow = "res://Assets/game/used weapons/bow1.png"
+		player_arrow ="res://Assets/game/used weapons/arrow1.png"
