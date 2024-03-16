@@ -20,3 +20,11 @@ func _on_exit_body_exited(body):
 	if body.is_in_group("Player"):
 		Global.set_player_actionkey(false)
 		player_exit = false
+
+
+func _on_buy_items_body_entered(body):
+	Global.set_player_sword("res://Assets/game/used weapons/tile060.png")
+
+
+func _on_buy_items_body_exited(body):
+	pass # Replace with function body.

@@ -362,7 +362,6 @@ offset_bottom = -175.0
 scale = Vector2(0.512223, 0.510873)
 
 [node name="item_menu" parent="." instance=ExtResource("5_oyqod")]
-visible = false
 offset_left = -274.0
 offset_top = -97.0
 offset_right = -274.0

@@ -89,7 +89,7 @@ func set_player_bars():
 	$stats/ColorRect/health_bar_player.value = player_health
 	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
 	$stats/ColorRect/stamina_bar_player.value = player_stamina
-	$stats/ColorRect/Coins/coins_amount.text = ("%s") % Global.get_player_coins()
+	$stats/ColorRect/Coins/coins_amount.text = ("%s") % Global.player_coins
 
 func change_stamina():
 	# If fight pressed remove stamina else add
