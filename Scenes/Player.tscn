@@ -335,6 +335,7 @@ scale = Vector2(2.09098, 1.31978)
 text = "E"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-1, -12)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_vru58")

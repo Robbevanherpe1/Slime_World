@@ -22,9 +22,8 @@ func _on_exit_body_exited(body):
 		player_exit = false
 
 
-func _on_buy_items_body_entered(body):
-	Global.set_player_sword("res://Assets/game/used weapons/sword2.png")
+func _on_buy_items_body_entered(_body):
+	pass
 
-
-func _on_buy_items_body_exited(body):
+func _on_buy_items_body_exited(_body):
 	pass
