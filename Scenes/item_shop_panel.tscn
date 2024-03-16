@@ -1,0 +1,65 @@
+[gd_scene load_steps=15 format=3 uid="uid://43v2elgh0y6l"]
+
+[ext_resource type="Texture2D" uid="uid://72x8fdm8t25c" path="res://Assets/game/used weapons/sword2.png" id="1_qm7se"]
+[ext_resource type="Texture2D" uid="uid://bd2x7vr4jg4t3" path="res://Assets/game/used weapons/sword3.png" id="2_32670"]
+[ext_resource type="Texture2D" uid="uid://bjhgx8ku05aqg" path="res://Assets/game/used weapons/sword4.png" id="3_5d608"]
+[ext_resource type="Texture2D" uid="uid://ccjya4korqcq0" path="res://Assets/game/used weapons/sword5.png" id="4_wo0i5"]
+[ext_resource type="Texture2D" uid="uid://b5qu1njlnuq4s" path="res://Assets/game/used weapons/sword6.png" id="5_m4acy"]
+[ext_resource type="Texture2D" uid="uid://c45tsqpqrvfab" path="res://Assets/game/used weapons/bow2.png" id="6_y2k7e"]
+[ext_resource type="Texture2D" uid="uid://0dxkykxugwac" path="res://Assets/game/used weapons/bow3.png" id="7_c2lio"]
+[ext_resource type="Texture2D" uid="uid://cppdm3xy16djr" path="res://Assets/game/used weapons/bow4.png" id="8_yujae"]
+[ext_resource type="Texture2D" uid="uid://dwmrasjy4jiam" path="res://Assets/game/used weapons/bow5.png" id="9_dxlgq"]
+[ext_resource type="Texture2D" uid="uid://sh1eipq3cjt5" path="res://Assets/game/used weapons/bow6.png" id="10_iss1p"]
+[ext_resource type="Texture2D" uid="uid://o1seha7ceviw" path="res://Assets/game/used weapons/bow7.png" id="11_lmri6"]
+[ext_resource type="Texture2D" uid="uid://oouluv0htf0s" path="res://Assets/game/used weapons/bow8.png" id="12_2gwi1"]
+[ext_resource type="Texture2D" uid="uid://c1rex2x3s4dny" path="res://Assets/game/used weapons/arrow2.png" id="13_vpdsk"]
+[ext_resource type="Texture2D" uid="uid://bmslf5l2tqck" path="res://Assets/game/used weapons/shield2.png" id="14_gc7w5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -13.0
+offset_right = 123.0
+offset_bottom = 80.0
+scale = Vector2(10, 10)
+auto_height = true
+item_count = 14
+max_columns = 4
+same_column_width = true
+icon_mode = 0
+item_0/text = ""
+item_0/icon = ExtResource("1_qm7se")
+item_1/text = ""
+item_1/icon = ExtResource("2_32670")
+item_2/text = ""
+item_2/icon = ExtResource("3_5d608")
+item_3/text = ""
+item_3/icon = ExtResource("4_wo0i5")
+item_4/text = ""
+item_4/icon = ExtResource("5_m4acy")
+item_5/text = ""
+item_5/icon = ExtResource("6_y2k7e")
+item_6/text = ""
+item_6/icon = ExtResource("7_c2lio")
+item_7/text = ""
+item_7/icon = ExtResource("8_yujae")
+item_8/text = ""
+item_8/icon = ExtResource("9_dxlgq")
+item_9/text = ""
+item_9/icon = ExtResource("10_iss1p")
+item_10/text = ""
+item_10/icon = ExtResource("11_lmri6")
+item_11/text = ""
+item_11/icon = ExtResource("12_2gwi1")
+item_12/text = ""
+item_12/icon = ExtResource("13_vpdsk")
+item_13/text = ""
+item_13/icon = ExtResource("14_gc7w5")

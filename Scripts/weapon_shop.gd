@@ -1,6 +1,7 @@
 extends Node2D
 
 var player_exit = false
+var player_buy = false
 var player
 
 func _process(_delta):
@@ -21,9 +22,14 @@ func _on_exit_body_exited(body):
 		Global.set_player_actionkey(false)
 		player_exit = false
 
+func _on_buy_items_body_entered(body):
+	# If player enters the buy zone show actionkey and set player_buy mode true
+	if body.is_in_group("Player"):
+		Global.set_player_actionkey(true)
+		player_buy = true
 
-func _on_buy_items_body_entered(_body):
-	pass
-
-func _on_buy_items_body_exited(_body):
-	pass
+func _on_buy_items_body_exited(body):
+	# If player exits the buy zone hide actionkey and set player_buy mode false
+	if body.is_in_group("Player"):
+		Global.set_player_actionkey(false)
+		player_buy = false
