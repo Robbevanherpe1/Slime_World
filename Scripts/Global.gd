@@ -11,24 +11,12 @@ var player_shield = "res://Assets/game/used weapons/shield1.png"
 var player_bow = "res://Assets/game/used weapons/bow1.png"
 var player_arrow = "res://Assets/game/used weapons/arrow1.png"
 
-
-func set_player_position(value):
-	player_position = value
-
-func get_player_position():
-	return player_position
-	
-func set_player_actionkey(value):
-	player_actionkey = value
-
-func get_player_actionkey():
-	return player_actionkey
-
-func set_player_coins(amount):
-	player_coins += amount
-
-func set_player_sword(type):
-	player_sword = type
+func reset_progress_player():
+	set_player_coins(0)
+	set_player_sword("res://Assets/game/used weapons/sword1.png")
+	set_player_shield("res://Assets/game/used weapons/shield1.png")
+	set_player_bow("res://Assets/game/used weapons/bow1.png")
+	set_player_arrow("res://Assets/game/used weapons/arrow1.png")
 
 #Save Game
 
@@ -36,7 +24,6 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
-	print(player_sword)
 	
 func _exit_tree():
 	save_game()
@@ -66,3 +53,33 @@ func load_data():
 		player_shield = "res://Assets/game/used weapons/shield1.png"
 		player_bow = "res://Assets/game/used weapons/bow1.png"
 		player_arrow ="res://Assets/game/used weapons/arrow1.png"
+	
+
+#set variables
+
+func set_player_position(value):
+	player_position = value
+
+func get_player_position():
+	return player_position
+	
+func set_player_actionkey(value):
+	player_actionkey = value
+
+func get_player_actionkey():
+	return player_actionkey
+
+func set_player_coins(amount):
+	player_coins += amount
+
+func set_player_sword(type):
+	player_sword = type
+	
+func set_player_shield(type):
+	player_shield = type
+	
+func set_player_bow(type):
+	player_bow = type
+	
+func set_player_arrow(type):
+	player_arrow = type
