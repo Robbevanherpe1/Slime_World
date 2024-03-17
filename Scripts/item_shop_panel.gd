@@ -24,8 +24,8 @@ func buy_item():
 	if $ItemList.is_anything_selected():
 		selected_item = str($ItemList.get_selected_items())
 
-func get_price_item(selected_item):
-	match selected_item:
+func get_price_item(item):
+	match item:
 		"[0]":
 			price_item = 100
 		"[1]":
