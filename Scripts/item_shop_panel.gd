@@ -1,7 +1,6 @@
 extends Control
 
 var selected_item
-var price_item
 
 func _ready():
 	# At start hide menu and set prices
@@ -27,35 +26,64 @@ func set_global_price():
 		ItemsGlobal.set_item_price(selected_item)
 
 func _on_buy_button_pressed():
+	
 	match selected_item:
 		"[0]":
-			Global.set_player_sword("res://Assets/game/used weapons/sword2.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_sword("res://Assets/game/used weapons/sword2.png")
 		"[1]":
-			Global.set_player_sword("res://Assets/game/used weapons/sword3.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_sword("res://Assets/game/used weapons/sword3.png")
 		"[2]":
-			Global.set_player_sword("res://Assets/game/used weapons/sword4.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_sword("res://Assets/game/used weapons/sword4.png")
 		"[3]":
-			Global.set_player_sword("res://Assets/game/used weapons/sword5.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_sword("res://Assets/game/used weapons/sword5.png")
 		"[4]":
-			Global.set_player_sword("res://Assets/game/used weapons/sword6.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_sword("res://Assets/game/used weapons/sword6.png")
 		"[5]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow2.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow2.png")
 		"[6]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow3.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow3.png")
 		"[7]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow4.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow4.png")
 		"[8]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow5.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow5.png")
 		"[9]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow6.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow6.png")
 		"[10]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow7.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow7.png")
 		"[11]":
-			Global.set_player_bow("res://Assets/game/used weapons/bow8.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_bow("res://Assets/game/used weapons/bow8.png")
 		"[12]":
-			Global.set_player_arrow("res://Assets/game/used weapons/arrow2.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_arrow("res://Assets/game/used weapons/arrow2.png")
 		"[13]":
-			Global.set_player_shield("res://Assets/game/used weapons/shield2.png")
+			if Global.player_coins >= ItemsGlobal.item_price:
+				Global.player_coins -= ItemsGlobal.item_price
+				Global.set_player_shield("res://Assets/game/used weapons/shield2.png")
 		_:
 			print("error buy item") # Replace with function body.
 

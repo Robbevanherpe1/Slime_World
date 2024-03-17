@@ -4,6 +4,7 @@ var player_position_default = Vector2(645,160) # Position of player in scene def
 var player_position = Vector2(645,160) # Position of player in scene
 var player_actionkey = false # Show Action key to player
 
+
 #player items
 var player_coins = 0
 var player_sword = "res://Assets/game/used weapons/sword1.png"
@@ -11,7 +12,8 @@ var player_shield = "res://Assets/game/used weapons/shield1.png"
 var player_bow = "res://Assets/game/used weapons/bow1.png"
 var player_arrow = "res://Assets/game/used weapons/arrow1.png"
 
-func reset_progress_player():
+func set_progress_player():
+	#set player progess for development tests
 	set_player_coins(0)
 	set_player_sword("res://Assets/game/used weapons/sword1.png")
 	set_player_shield("res://Assets/game/used weapons/shield1.png")
@@ -24,6 +26,7 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
+	#set_progress_player()
 	
 func _exit_tree():
 	save_game()
