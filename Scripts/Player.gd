@@ -5,7 +5,8 @@ var direction:Vector2 = Vector2.ZERO
 var speed = 50
 var speed_animation = 1
 var sprint = false
-var player_health = 100
+var player_health = 100 + (20 * ItemsGlobal.schield_health) - 20
+var max_player_health = 100 + (20 * ItemsGlobal.schield_health) - 20
 var player_stamina = 100
 var stamina_timer = 0
 
@@ -57,35 +58,59 @@ func player_dead():
 #animations
 
 func show_animation():
-	# If fight pressed show fight animation else show normal animations
-	if Input.is_action_pressed("fight"):
-		if direction == Vector2.ZERO:
-			$AnimatedSprite2D.play("fight")
-		else:
-			if direction.x != 0:
-				$AnimatedSprite2D.flip_h = direction.x < 0
-				$AnimatedSprite2D.play("fight")
-			elif direction.y < 0:
-				$AnimatedSprite2D.play("fight_up")
-			elif direction.y > 0:
-				$AnimatedSprite2D.play("fight_down")
-	else:
+	if ItemsGlobal.weapon_equiped == "Sword":
+		# If fight pressed show fight animation else show normal animations
+		if Input.is_action_pressed("fight"):
 			if direction == Vector2.ZERO:
-				$AnimatedSprite2D.play("idle")
+				$AnimatedSprite2D.play("fight")
 			else:
 				if direction.x != 0:
 					$AnimatedSprite2D.flip_h = direction.x < 0
-					$AnimatedSprite2D.play("walk",speed_animation)
+					$AnimatedSprite2D.play("fight")
 				elif direction.y < 0:
-					$AnimatedSprite2D.play("up",speed_animation)
+					$AnimatedSprite2D.play("fight_up")
 				elif direction.y > 0:
-					$AnimatedSprite2D.play("down",speed_animation)
-
+					$AnimatedSprite2D.play("fight_down")
+		else:
+				if direction == Vector2.ZERO:
+					$AnimatedSprite2D.play("idle")
+				else:
+					if direction.x != 0:
+						$AnimatedSprite2D.flip_h = direction.x < 0
+						$AnimatedSprite2D.play("walk",speed_animation)
+					elif direction.y < 0:
+						$AnimatedSprite2D.play("up",speed_animation)
+					elif direction.y > 0:
+						$AnimatedSprite2D.play("down",speed_animation)
+	if ItemsGlobal.weapon_equiped == "Bow" :
+		if Input.is_action_pressed("fight"):
+			if direction == Vector2.ZERO:
+				$AnimatedSprite2D.play("shoot")
+			else:
+				if direction.x != 0:
+					$AnimatedSprite2D.flip_h = direction.x < 0
+					$AnimatedSprite2D.play("shoot")
+				elif direction.y < 0:
+					$AnimatedSprite2D.play("shoot")
+				elif direction.y > 0:
+					$AnimatedSprite2D.play("shoot")
+		else:
+				if direction == Vector2.ZERO:
+					$AnimatedSprite2D.play("idle")
+				else:
+					if direction.x != 0:
+						$AnimatedSprite2D.flip_h = direction.x < 0
+						$AnimatedSprite2D.play("walk",speed_animation)
+					elif direction.y < 0:
+						$AnimatedSprite2D.play("up",speed_animation)
+					elif direction.y > 0:
+						$AnimatedSprite2D.play("down",speed_animation)
+		
 #stamina and health
 
 func set_player_bars():
 	# Set health and stamina bar value
-	$stats/ColorRect/health_bar_player/health_player.text = ("%s / 100") % player_health
+	$stats/ColorRect/health_bar_player/health_player.text = "%s / %s" % [player_health, max_player_health]
 	$stats/ColorRect/health_bar_player.value = player_health
 	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
 	$stats/ColorRect/stamina_bar_player.value = player_stamina
@@ -114,4 +139,5 @@ func remove_stamina():
 	if player_stamina > 0:
 			player_stamina += -10
 			print("remove stamina -10")
+
 	

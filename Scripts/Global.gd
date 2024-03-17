@@ -5,6 +5,7 @@ var player_position = Vector2(645,160) # Position of player in scene
 var player_actionkey = false # Show Action key to player
 
 
+
 #player items
 var player_coins = 0
 var player_sword = "res://Assets/game/used weapons/sword1.png"

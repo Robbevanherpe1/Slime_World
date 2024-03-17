@@ -213,7 +213,18 @@ value = 100.0
 rounded = true
 show_percentage = false
 
+[node name="player_bzone" type="Area2D" parent="."]
+scale = Vector2(2.0018, 1.78186)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_bzone"]
+z_as_relative = false
+position = Vector2(0, 0.833333)
+scale = Vector2(1.13197, 1.2224)
+shape = SubResource("CircleShape2D_2csrn")
+
 [connection signal="body_entered" from="detection _area" to="." method="_on_detection__area_body_entered"]
 [connection signal="body_exited" from="detection _area" to="." method="_on_detection__area_body_exited"]
 [connection signal="body_entered" from="player_azone" to="." method="_on_player_azone_body_entered"]
 [connection signal="body_exited" from="player_azone" to="." method="_on_player_azone_body_exited"]
+[connection signal="body_entered" from="player_bzone" to="." method="_on_player_bzone_body_entered"]
+[connection signal="body_exited" from="player_bzone" to="." method="_on_player_bzone_body_exited"]

@@ -4,6 +4,7 @@ var HP = 100
 var speed = 150
 var player_chase = false
 var player_attack = false
+var player_attack_bow = false
 var player = null
 var Attack_timer = 0
 
@@ -13,11 +14,11 @@ func _ready():
 
 func _process(_delta):
 	# If player in attack range and player pressed fight than attack
-	if player_attack:
+	if player_attack and ItemsGlobal.weapon_equiped == "Sword":
 		if HP >0:
 			attack_player()
 			if Input.is_action_just_pressed("fight") and player.player_stamina != 0:
-				HP -= 30
+				HP -= 30 * ItemsGlobal.sword_damage
 				set_health_bar()
 				attack_player()
 		else:
@@ -26,6 +27,18 @@ func _process(_delta):
 				queue_free()
 				print("enemy killed")
 				print("1 coin added")
+	if player_attack_bow  and ItemsGlobal.weapon_equiped == "Bow":
+		if HP >0:
+			if Input.is_action_just_pressed("fight") and player.player_stamina != 0:
+				HP -= 25 * ItemsGlobal.bow_power
+				set_health_bar()
+		else:
+				$AnimatedSprite2D.play("dead")
+				Global.set_player_coins(1)
+				queue_free()
+				print("enemy killed")
+				print("1 coin added")
+		
 
 func _physics_process(_delta):
 	# If player not in attack range play walking animations else attack animantions
@@ -81,3 +94,15 @@ func _on_player_azone_body_exited(body):
 	# If player leaves the attack radius set mode player_attack to false
 	if body.is_in_group("Player"):
 		player_attack=false
+
+
+func _on_player_bzone_body_entered(body):
+	# If player gets in attack radius set mode player_attack
+	if body.is_in_group("Player"):
+		player_attack_bow = true
+
+
+func _on_player_bzone_body_exited(body):
+	# If player leaves the attack radius set mode player_attack to false
+	if body.is_in_group("Player"):
+		player_attack_bow = false

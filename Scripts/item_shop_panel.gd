@@ -11,12 +11,6 @@ func _process(_delta):
 	#set shown coins equal to player coins
 	$Coins/coins_amount.text =str(Global.player_coins)
 	set_global_price()
-	# If menu action pressed show menu
-	if Input.is_action_just_pressed("enter"):
-		if visible == false:
-			visible = true
-		else: 
-			visible = false
 
 
 func set_global_price():

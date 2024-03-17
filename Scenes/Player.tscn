@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://6e0wo5c0bi48"]
+[gd_scene load_steps=50 format=3 uid="uid://6e0wo5c0bi48"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4f6cn"]
 [ext_resource type="Texture2D" uid="uid://7twujmgumnue" path="res://Assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_8vglv"]
+[ext_resource type="Texture2D" uid="uid://co436i7idjgp" path="res://Assets/game/player_bow.png" id="3_2j2b0"]
 [ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_rjfqk"]
 [ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_2knho"]
 [ext_resource type="PackedScene" uid="uid://ddl7k4sxdmy7" path="res://Scenes/item_menu.tscn" id="5_oyqod"]
@@ -109,6 +110,22 @@ region = Rect2(240, 48, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5gj3"]
 atlas = ExtResource("2_8vglv")
 region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6fh0"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4dpi"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8tg6"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yd7u"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(144, 336, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wal5k"]
 atlas = ExtResource("2_8vglv")
@@ -259,6 +276,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_n6fh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4dpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8tg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yd7u")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wal5k")
 }, {
 "duration": 1.0,
@@ -339,7 +373,9 @@ texture_filter = 1
 position = Vector2(-1, -12)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_vru58")
-animation = &"idle"
+animation = &"shoot"
+frame = 3
+frame_progress = 0.536607
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false

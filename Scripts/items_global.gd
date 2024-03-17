@@ -29,11 +29,14 @@ var schield_health
 var bow_power
 var arrow_damage
 
+var weapon_equiped ="Sword"
+
 
 func _ready():
 	set_items()
 
 func _process(_delta):
+	set_weapon_equiped()
 	set_sword_damage()
 	set_schield_health()
 	set_bow_power()
@@ -111,3 +114,9 @@ func set_arrow_damage():
 		if  Global.player_arrow == arrows[item]:
 			arrow_damage = item + 1
 			break
+
+func set_weapon_equiped():
+	if Input.is_action_just_pressed("useBow"):
+		weapon_equiped = "Bow"
+	if Input.is_action_just_pressed("useSword"):
+		weapon_equiped = "Sword"

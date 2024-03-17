@@ -5,10 +5,19 @@ var player_buy = false
 var player
 
 func _process(_delta):
-		# If player in exit zone and press enter action change sceneto main
+	# If player in exit zone and press enter action change sceneto main
 	if player_exit == true:
 		if Input.is_action_just_pressed("enter"):
 			get_tree().change_scene_to_file("res://Scenes/Main_Scene.tscn")
+
+	# If player in buy zone and menu action pressed show menu
+	if player_buy == true:
+		# If menu action pressed show menu
+		if Input.is_action_just_pressed("enter"):
+			if $Item_shop_panel.visible == false:
+				$Item_shop_panel.visible = true
+			else: 
+				$Item_shop_panel.visible = false
 
 func _on_exit_body_entered(body):
 	# If player enters exit zone show actionkey and set player_exit mode true
