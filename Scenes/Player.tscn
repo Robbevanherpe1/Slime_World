@@ -498,6 +498,7 @@ offset_right = -274.0
 offset_bottom = -97.0
 
 [node name="Arrow" parent="." instance=ExtResource("7_wfyhg")]
+visible = false
 z_index = 9
 z_as_relative = false
 y_sort_enabled = true

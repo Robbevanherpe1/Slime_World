@@ -19,7 +19,6 @@ func _process(_delta):
 	actionkey()
 	set_player_bars()
 	change_stamina()
-	Global.player_shoot_position = position
 	player_dead()
 
 func _physics_process(_delta):

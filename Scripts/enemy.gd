@@ -8,14 +8,13 @@ var player_attack_bow = false
 var player = null
 var Attack_timer = 0
 
+
 func _ready():
 	# At start hide enemies
 	visible =false
 	self.add_to_group("Enemies")
 
 func _process(_delta):
-	if player_attack_bow ==true:
-		Global.enemy_position = position
 	# If player in attack range and player pressed fight than attack
 	if player_attack and ItemsGlobal.weapon_equiped == "Sword":
 		if HP >0:
@@ -65,7 +64,7 @@ func set_health_bar():
 func attack_player():
 	# Set a timer and when it hits 100 attack player
 	Attack_timer +=1
-	if Attack_timer ==100: #speed of attack
+	if Attack_timer ==50: #speed of attack
 		player.player_health -= 10
 		print("removed health -10")
 		Attack_timer = 0
