@@ -19,6 +19,7 @@ func _process(_delta):
 	actionkey()
 	set_player_bars()
 	change_stamina()
+	Global.player_shoot_position = position
 	player_dead()
 
 func _physics_process(_delta):
@@ -52,6 +53,8 @@ func actionkey():
 func player_dead():
 	# If player_health <=0 change sceen to start and reset player position
 	if player_health <=0:
+		$AnimatedSprite2D.play("dead")
+		await get_tree().create_timer(2.0).timeout
 		Global.set_player_position(Global.player_position_default)
 		get_tree().change_scene_to_file("res://Scenes/Start_Screen.tscn")
 
@@ -91,9 +94,9 @@ func show_animation():
 					$AnimatedSprite2D.flip_h = direction.x < 0
 					$AnimatedSprite2D.play("shoot")
 				elif direction.y < 0:
-					$AnimatedSprite2D.play("shoot")
+					$AnimatedSprite2D.play("bow_up")
 				elif direction.y > 0:
-					$AnimatedSprite2D.play("shoot")
+					$AnimatedSprite2D.play("bow_down")
 		else:
 				if direction == Vector2.ZERO:
 					$AnimatedSprite2D.play("idle")
@@ -140,4 +143,3 @@ func remove_stamina():
 			player_stamina += -10
 			print("remove stamina -10")
 
-	

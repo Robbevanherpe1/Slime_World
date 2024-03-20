@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://6e0wo5c0bi48"]
+[gd_scene load_steps=62 format=3 uid="uid://6e0wo5c0bi48"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4f6cn"]
 [ext_resource type="Texture2D" uid="uid://7twujmgumnue" path="res://Assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_8vglv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://oqv6e552ubff" path="res://Scenes/menu.tscn" id="3_rjfqk"]
 [ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_2knho"]
 [ext_resource type="PackedScene" uid="uid://ddl7k4sxdmy7" path="res://Scenes/item_menu.tscn" id="5_oyqod"]
+[ext_resource type="PackedScene" uid="uid://dkr4skcen4k4p" path="res://Scenes/arrow.tscn" id="7_wfyhg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ysqg"]
 bg_color = Color(0.552941, 0.34902, 0, 0.329412)
@@ -14,6 +15,50 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 shadow_size = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4na7e"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(0, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibfk6"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(48, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5cpj"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(96, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_123i5"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(144, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upjtw"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(0, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n47ws"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(48, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0lvm"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(96, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i6qo"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(144, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx3ry"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cb4y"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvwck"]
+atlas = ExtResource("3_2j2b0")
+region = Rect2(96, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj6g2"]
 atlas = ExtResource("2_8vglv")
@@ -177,6 +222,54 @@ region = Rect2(240, 192, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vru58"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4na7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibfk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5cpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_123i5")
+}],
+"loop": true,
+"name": &"bow_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upjtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n47ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0lvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i6qo")
+}],
+"loop": true,
+"name": &"bow_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx3ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cb4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvwck")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jj6g2")
@@ -373,9 +466,9 @@ texture_filter = 1
 position = Vector2(-1, -12)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_vru58")
-animation = &"shoot"
-frame = 3
-frame_progress = 0.536607
+animation = &"bow_down"
+frame = 2
+frame_progress = 0.975645
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
@@ -403,3 +496,8 @@ offset_left = -274.0
 offset_top = -97.0
 offset_right = -274.0
 offset_bottom = -97.0
+
+[node name="Arrow" parent="." instance=ExtResource("7_wfyhg")]
+z_index = 9
+z_as_relative = false
+y_sort_enabled = true

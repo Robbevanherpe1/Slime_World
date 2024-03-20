@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkr4skcen4k4p"]
+
+[ext_resource type="Texture2D" uid="uid://csclkw77aa2rr" path="res://Assets/game/used weapons/arrow1.png" id="1_iy73v"]
+[ext_resource type="Script" path="res://Scripts/arrow.gd" id="2_ktorm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cdly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65ki8"]
+size = Vector2(22.4672, 12.1916)
+
+[node name="Arrow" type="Sprite2D"]
+texture = ExtResource("1_iy73v")
+script = ExtResource("2_ktorm")
+
+[node name="arrow_path" type="Area2D" parent="."]
+scale = Vector2(1.86932, 1.46395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_path"]
+scale = Vector2(5.93484, 7.73764)
+shape = SubResource("CircleShape2D_5cdly")
+
+[node name="arrow_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_hitbox"]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1.41503, 2.81294)
+shape = SubResource("RectangleShape2D_65ki8")
+
+[connection signal="body_entered" from="arrow_path" to="." method="_on_arrow_path_body_entered"]
+[connection signal="body_exited" from="arrow_path" to="." method="_on_arrow_path_body_exited"]
+[connection signal="body_entered" from="arrow_hitbox" to="." method="_on_arrow_hitbox_body_entered"]

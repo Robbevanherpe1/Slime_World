@@ -11,8 +11,11 @@ var Attack_timer = 0
 func _ready():
 	# At start hide enemies
 	visible =false
+	self.add_to_group("Enemies")
 
 func _process(_delta):
+	if player_attack_bow ==true:
+		Global.enemy_position = position
 	# If player in attack range and player pressed fight than attack
 	if player_attack and ItemsGlobal.weapon_equiped == "Sword":
 		if HP >0:
@@ -38,7 +41,6 @@ func _process(_delta):
 				queue_free()
 				print("enemy killed")
 				print("1 coin added")
-		
 
 func _physics_process(_delta):
 	# If player not in attack range play walking animations else attack animantions
@@ -100,6 +102,7 @@ func _on_player_bzone_body_entered(body):
 	# If player gets in attack radius set mode player_attack
 	if body.is_in_group("Player"):
 		player_attack_bow = true
+		
 
 
 func _on_player_bzone_body_exited(body):
