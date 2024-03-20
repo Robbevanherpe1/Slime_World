@@ -13,9 +13,16 @@ func _process(_delta):
 			$ItemMenuScreen.visible = true
 		
 	#set the player items
-	$ItemMenuScreen/ItemList1.set_item_icon( 0, load(Global.player_sword))
-	$ItemMenuScreen/ItemList1.set_item_icon( 1, load(Global.player_bow))
-	$ItemMenuScreen/ItemList1.set_item_icon( 2, load(Global.player_shield))
-	$ItemMenuScreen/ItemList1.set_item_icon( 3, load(Global.player_arrow))
+	$ItemMenuScreen/Inventory.set_item_icon( 0, load(Global.player_sword))
+	$ItemMenuScreen/Inventory.set_item_icon( 1, load(Global.player_bow))
+	$ItemMenuScreen/Inventory.set_item_icon( 2, load(Global.player_shield))
+	$ItemMenuScreen/Inventory.set_item_icon( 3, load(Global.player_arrow))
+	
+	#set item stats
+	
+	$ItemMenuScreen/Inventory/sword_damage.text = str(ItemsGlobal.sword_damage)
+	$ItemMenuScreen/Inventory/bow_power.text = str(ItemsGlobal.bow_power)
+	$ItemMenuScreen/Inventory/arrow_damage.text =str(ItemsGlobal.arrow_damage)
+	$ItemMenuScreen/Inventory/shield_health.text = str(ItemsGlobal.schield_health *20)
 	
 	

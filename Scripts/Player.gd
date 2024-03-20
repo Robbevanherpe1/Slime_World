@@ -5,8 +5,8 @@ var direction:Vector2 = Vector2.ZERO
 var speed = 50
 var speed_animation = 1
 var sprint = false
-var player_health = 100 + (20 * ItemsGlobal.schield_health) - 20
-var max_player_health = 100 + (20 * ItemsGlobal.schield_health) - 20
+var player_health = 100 + (20 * ItemsGlobal.schield_health)
+var max_player_health = 100 + (20 * ItemsGlobal.schield_health)
 var player_stamina = 100
 var stamina_timer = 0
 
