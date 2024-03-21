@@ -1,4 +1,14 @@
-[gd_scene format=3 uid="uid://bbvnfydelbh5m"]
+[gd_scene load_steps=3 format=3 uid="uid://bbvnfydelbh5m"]
+
+[ext_resource type="Script" path="res://Scripts/itembar.gd" id="1_tx2eb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38874"]
+bg_color = Color(0.6, 0.6, 0.6, 0.25098)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
 
 [node name="Itembar" type="Control"]
 layout_mode = 3
@@ -7,3 +17,121 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_tx2eb")
+
+[node name="Items" type="ItemList" parent="."]
+custom_minimum_size = Vector2(136, 28)
+layout_mode = 0
+offset_left = 790.0
+offset_top = 983.333
+offset_right = 926.0
+offset_bottom = 1019.33
+scale = Vector2(4.28449, 2.91338)
+allow_reselect = true
+auto_height = true
+item_count = 5
+max_columns = 5
+same_column_width = true
+fixed_column_width = 20
+icon_scale = 1.5
+item_0/text = ""
+item_1/text = ""
+item_2/text = ""
+item_3/text = ""
+item_4/text = ""
+
+[node name="Panel1" type="Panel" parent="Items"]
+layout_mode = 0
+offset_left = 16.5714
+offset_top = 24.9424
+offset_right = 56.5714
+offset_bottom = 64.9424
+scale = Vector2(0.17258, 0.225148)
+theme_override_styles/panel = SubResource("StyleBoxFlat_38874")
+
+[node name="item1" type="Label" parent="Items"]
+layout_mode = 0
+offset_left = 18.1274
+offset_top = 23.7982
+offset_right = 58.1274
+offset_bottom = 46.7982
+scale = Vector2(0.5, 0.491607)
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Panel2" type="Panel" parent="Items"]
+layout_mode = 0
+offset_left = 41.4674
+offset_top = 24.9424
+offset_right = 81.4674
+offset_bottom = 64.9424
+scale = Vector2(0.17258, 0.225148)
+theme_override_styles/panel = SubResource("StyleBoxFlat_38874")
+
+[node name="item2" type="Label" parent="Items"]
+layout_mode = 0
+offset_left = 42.2454
+offset_top = 23.7982
+offset_right = 82.2454
+offset_bottom = 46.7982
+scale = Vector2(0.5, 0.491607)
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Panel3" type="Panel" parent="Items"]
+layout_mode = 0
+offset_left = 64.8074
+offset_top = 24.9424
+offset_right = 104.807
+offset_bottom = 64.9424
+scale = Vector2(0.17258, 0.225148)
+theme_override_styles/panel = SubResource("StyleBoxFlat_38874")
+
+[node name="item3" type="Label" parent="Items"]
+layout_mode = 0
+offset_left = 65.5854
+offset_top = 23.7982
+offset_right = 105.585
+offset_bottom = 46.7982
+scale = Vector2(0.5, 0.491607)
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Panel4" type="Panel" parent="Items"]
+layout_mode = 0
+offset_left = 88.9254
+offset_top = 25.2
+offset_right = 128.925
+offset_bottom = 65.2
+scale = Vector2(0.17258, 0.225148)
+theme_override_styles/panel = SubResource("StyleBoxFlat_38874")
+
+[node name="item4" type="Label" parent="Items"]
+layout_mode = 0
+offset_left = 89.7034
+offset_top = 23.7982
+offset_right = 129.703
+offset_bottom = 46.7982
+scale = Vector2(0.5, 0.491607)
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Panel5" type="Panel" parent="Items"]
+layout_mode = 0
+offset_left = 113.043
+offset_top = 24.9424
+offset_right = 153.043
+offset_bottom = 64.9424
+scale = Vector2(0.17258, 0.225148)
+theme_override_styles/panel = SubResource("StyleBoxFlat_38874")
+
+[node name="item5" type="Label" parent="Items"]
+layout_mode = 0
+offset_left = 113.821
+offset_top = 23.7982
+offset_right = 153.821
+offset_bottom = 46.7982
+scale = Vector2(0.5, 0.491607)
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

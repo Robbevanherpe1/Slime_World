@@ -44,11 +44,11 @@ func _process(_delta):
 
 func set_items():
 	#at start make lists of all weapons
-		for n in range(5):
+		for n in range(6):
 			swords.append("res://Assets/game/used weapons/sword" + str(n+1) + ".png")
 		for n in range(2):
 			shields.append("res://Assets/game/used weapons/shield" + str(n+1) + ".png")
-		for n in range(6):
+		for n in range(8):
 			bows.append("res://Assets/game/used weapons/bow" + str(n+1) + ".png")
 		for n in range(2):
 			arrows.append("res://Assets/game/used weapons/arrow" + str(n+1) + ".png")

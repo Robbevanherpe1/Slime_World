@@ -21,7 +21,7 @@ func _process(_delta):
 				"Pub":
 					get_tree().change_scene_to_file("res://Scenes/Pub.tscn")
 				"House_1":
-					get_tree().change_scene_to_file("res://Scenes/House_2.tscn")
+					get_tree().change_scene_to_file("res://Scenes/House_1.tscn")
 				"House_2":
 					get_tree().change_scene_to_file("res://Scenes/House_2.tscn")
 				_:

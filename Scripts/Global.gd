@@ -4,20 +4,29 @@ var player_position_default = Vector2(645,160) # Position of player in scene def
 var player_position = Vector2(645,160) # Position of player in scene
 var player_actionkey = false # Show Action key to player
 
-#player items
+#player stats items
 var player_coins = 0
 var player_sword = "res://Assets/game/used weapons/sword1.png"
 var player_shield = "res://Assets/game/used weapons/shield1.png"
 var player_bow = "res://Assets/game/used weapons/bow1.png"
 var player_arrow = "res://Assets/game/used weapons/arrow1.png"
 
+#player useable items
+var health_potions_amount = 0
+var hulk_potions_amount = 0
+var extra = 0
+
+
 func set_progress_player():
 	#set player progess for development tests
-	set_player_coins(0)
+	set_player_coins(1000000)
 	set_player_sword("res://Assets/game/used weapons/sword1.png")
 	set_player_shield("res://Assets/game/used weapons/shield1.png")
 	set_player_bow("res://Assets/game/used weapons/bow1.png")
 	set_player_arrow("res://Assets/game/used weapons/arrow1.png")
+	health_potions_amount = 2
+	hulk_potions_amount = 2
+	
 
 #Save Game
 
@@ -33,6 +42,8 @@ func _exit_tree():
 func save_game():
 	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
 	save_file.store_var(player_coins)
+	save_file.store_var(health_potions_amount)
+	save_file.store_var(hulk_potions_amount)
 	save_file.store_string(player_sword + "\n")
 	save_file.store_string(player_shield + "\n")
 	save_file.store_string(player_bow + "\n")
@@ -43,6 +54,8 @@ func load_data():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		player_coins = file.get_var()
+		health_potions_amount = file.get_var()
+		hulk_potions_amount = file.get_var()
 		player_sword = file.get_line()
 		player_shield = file.get_line()
 		player_bow = file.get_line()
@@ -51,6 +64,8 @@ func load_data():
 	else:
 		print("No data found.")
 		player_coins = 0
+		health_potions_amount = 0
+		hulk_potions_amount = 0
 		player_sword = "res://Assets/game/used weapons/sword1.png"
 		player_shield = "res://Assets/game/used weapons/shield1.png"
 		player_bow = "res://Assets/game/used weapons/bow1.png"

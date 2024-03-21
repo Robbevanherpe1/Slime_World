@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://6e0wo5c0bi48"]
+[gd_scene load_steps=63 format=3 uid="uid://6e0wo5c0bi48"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4f6cn"]
 [ext_resource type="Texture2D" uid="uid://7twujmgumnue" path="res://Assets/mystic_woods_free_2.1/sprites/characters/player.png" id="2_8vglv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b21abj26ppjgf" path="res://Scenes/stats.tscn" id="4_2knho"]
 [ext_resource type="PackedScene" uid="uid://ddl7k4sxdmy7" path="res://Scenes/item_menu.tscn" id="5_oyqod"]
 [ext_resource type="PackedScene" uid="uid://dkr4skcen4k4p" path="res://Scenes/arrow.tscn" id="7_wfyhg"]
+[ext_resource type="PackedScene" uid="uid://bbvnfydelbh5m" path="res://Scenes/itembar.tscn" id="8_2vkig"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ysqg"]
 bg_color = Color(0.552941, 0.34902, 0, 0.329412)
@@ -502,3 +503,11 @@ visible = false
 z_index = 9
 z_as_relative = false
 y_sort_enabled = true
+
+[node name="Itembar" parent="." instance=ExtResource("8_2vkig")]
+z_index = 10
+offset_left = -271.0
+offset_top = -38.0
+offset_right = -271.0
+offset_bottom = -38.0
+scale = Vector2(0.260031, 0.215208)
