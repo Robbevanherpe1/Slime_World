@@ -61,4 +61,3 @@ func  Empty_ItemSLot(itemslot):
 				$Items/item5.text = ""
 			_:
 				print("error Itembar itemslot index")
-
