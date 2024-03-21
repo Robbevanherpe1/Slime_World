@@ -17,7 +17,7 @@ func set_global_price():
 	#if anything selected set global itemprice to item's price
 	if $ItemList.is_anything_selected():
 		selected_item = str($ItemList.get_selected_items())
-		ItemsGlobal.set_item_price(selected_item)
+		ItemsGlobal.set_item_price1(selected_item)
 
 func _on_buy_button_pressed():
 	

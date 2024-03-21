@@ -103,6 +103,7 @@ offset_top = 90.0
 offset_right = 628.0
 offset_bottom = 183.0
 scale = Vector2(9, 9)
+focus_mode = 0
 auto_height = true
 item_count = 14
 max_columns = 4

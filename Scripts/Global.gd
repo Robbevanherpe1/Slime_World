@@ -26,7 +26,6 @@ func set_progress_player():
 	set_player_arrow("res://Assets/game/used weapons/arrow1.png")
 	health_potions_amount = 2
 	hulk_potions_amount = 2
-	
 
 #Save Game
 
@@ -34,6 +33,7 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
+	set_player_coins(1000000)
 	#set_progress_player()
 	
 func _exit_tree():

@@ -1,0 +1,512 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7tk36vfcxc1v"]
+
+[ext_resource type="Script" path="res://Scripts/item_shop_panel_2.gd" id="1_dudxe"]
+[ext_resource type="Texture2D" uid="uid://d3ysv0o6lqlnc" path="res://Assets/HyperCasual-Game-UI/coinIcon.png" id="1_tnf6s"]
+[ext_resource type="Texture2D" uid="uid://dg47sitw28pnn" path="res://Assets/game/used_items/healthPotion.png" id="3_vxi0d"]
+[ext_resource type="Texture2D" uid="uid://bhxy8xtvjhq50" path="res://Assets/game/used_items/hulkPotion.png" id="4_c7jkc"]
+[ext_resource type="Texture2D" uid="uid://c4v03jq18kd5x" path="res://Assets/game/used_items/emptyItemSlot.png" id="5_14qmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31tje"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+shadow_size = 1
+anti_aliasing_size = 0.398
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cs0w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cvfg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60xt8"]
+bg_color = Color(0.376471, 0.623529, 0.85098, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nysbh"]
+bg_color = Color(0.231373, 0.466667, 0.678431, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="item_shop_panel2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_dudxe")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+scale = Vector2(36.3558, 24.116)
+theme_override_styles/panel = SubResource("StyleBoxFlat_31tje")
+
+[node name="Coins" type="Panel" parent="."]
+offset_left = 146.0
+offset_top = 273.0
+offset_right = 313.0
+offset_bottom = 291.0
+scale = Vector2(1.5, 4.176)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cs0w")
+
+[node name="CoinIcon" type="Sprite2D" parent="Coins"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="coins_amount" type="Label" parent="Coins"]
+layout_mode = 0
+offset_left = 36.5591
+offset_top = 2.19115
+offset_right = 106.559
+offset_bottom = 25.1912
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Coins"]
+layout_mode = 0
+offset_left = -13.3333
+offset_top = -16.7624
+offset_right = 41.6667
+offset_bottom = 6.23755
+scale = Vector2(1.68783, 0.600855)
+text = "Coins:"
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 530.0
+offset_top = 88.0
+offset_right = 628.0
+offset_bottom = 181.0
+scale = Vector2(9, 9)
+focus_mode = 0
+auto_height = true
+item_count = 16
+max_columns = 4
+same_column_width = true
+icon_mode = 0
+item_0/text = ""
+item_0/icon = ExtResource("3_vxi0d")
+item_1/text = ""
+item_1/icon = ExtResource("4_c7jkc")
+item_2/text = ""
+item_2/icon = ExtResource("5_14qmb")
+item_3/text = ""
+item_3/icon = ExtResource("5_14qmb")
+item_4/text = ""
+item_4/icon = ExtResource("5_14qmb")
+item_5/text = ""
+item_5/icon = ExtResource("5_14qmb")
+item_6/text = ""
+item_6/icon = ExtResource("5_14qmb")
+item_7/text = ""
+item_7/icon = ExtResource("5_14qmb")
+item_8/text = ""
+item_8/icon = ExtResource("5_14qmb")
+item_9/text = ""
+item_9/icon = ExtResource("5_14qmb")
+item_10/text = ""
+item_10/icon = ExtResource("5_14qmb")
+item_11/text = ""
+item_11/icon = ExtResource("5_14qmb")
+item_12/text = ""
+item_12/icon = ExtResource("5_14qmb")
+item_13/text = ""
+item_13/icon = ExtResource("5_14qmb")
+item_14/text = ""
+item_14/icon = ExtResource("5_14qmb")
+item_15/text = ""
+item_15/icon = ExtResource("5_14qmb")
+
+[node name="item1" type="Panel" parent="."]
+offset_left = 550.0
+offset_top = 285.0
+offset_right = 717.0
+offset_bottom = 303.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item1"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item1"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item2" type="Panel" parent="."]
+offset_left = 735.0
+offset_top = 284.0
+offset_right = 902.0
+offset_bottom = 302.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item2"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item2"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item3" type="Panel" parent="."]
+offset_left = 922.0
+offset_top = 284.0
+offset_right = 1089.0
+offset_bottom = 302.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item3"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item3"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item4" type="Panel" parent="."]
+offset_left = 1106.0
+offset_top = 281.0
+offset_right = 1273.0
+offset_bottom = 299.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item4"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item4"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item5" type="Panel" parent="."]
+offset_left = 550.0
+offset_top = 460.0
+offset_right = 717.0
+offset_bottom = 478.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item5"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item5"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item6" type="Panel" parent="."]
+offset_left = 735.0
+offset_top = 459.0
+offset_right = 902.0
+offset_bottom = 477.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item6"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item6"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item7" type="Panel" parent="."]
+offset_left = 922.0
+offset_top = 459.0
+offset_right = 1089.0
+offset_bottom = 477.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item7"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item7"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item8" type="Panel" parent="."]
+offset_left = 1106.0
+offset_top = 456.0
+offset_right = 1273.0
+offset_bottom = 474.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item8"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item8"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item9" type="Panel" parent="."]
+offset_left = 553.0
+offset_top = 635.0
+offset_right = 720.0
+offset_bottom = 653.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item9"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item9"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item10" type="Panel" parent="."]
+offset_left = 738.0
+offset_top = 634.0
+offset_right = 905.0
+offset_bottom = 652.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item10"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item10"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item11" type="Panel" parent="."]
+offset_left = 925.0
+offset_top = 634.0
+offset_right = 1092.0
+offset_bottom = 652.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item11"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item11"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item12" type="Panel" parent="."]
+offset_left = 1109.0
+offset_top = 631.0
+offset_right = 1276.0
+offset_bottom = 649.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item12"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item12"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item13" type="Panel" parent="."]
+offset_left = 560.0
+offset_top = 810.0
+offset_right = 727.0
+offset_bottom = 828.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item13"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item13"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item14" type="Panel" parent="."]
+offset_left = 739.0
+offset_top = 811.0
+offset_right = 906.0
+offset_bottom = 829.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item14"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item14"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item15" type="Panel" parent="."]
+offset_left = 920.0
+offset_top = 810.0
+offset_right = 1087.0
+offset_bottom = 828.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item15"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item15"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item16" type="Panel" parent="."]
+offset_left = 1110.0
+offset_top = 810.0
+offset_right = 1277.0
+offset_bottom = 828.0
+scale = Vector2(0.8, 2.227)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cvfg")
+
+[node name="CoinIcon" type="Sprite2D" parent="item16"]
+position = Vector2(30.4659, 8.76461)
+scale = Vector2(0.162789, 0.0537452)
+texture = ExtResource("1_tnf6s")
+
+[node name="price" type="Label" parent="item16"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 1.14441e-05
+offset_right = 128.0
+offset_bottom = 23.0001
+scale = Vector2(1.85701, 0.643849)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="."]
+offset_left = 170.0
+offset_top = 750.0
+offset_right = 216.0
+offset_bottom = 781.0
+scale = Vector2(5.07107, 2.89641)
+theme_override_styles/normal = SubResource("StyleBoxFlat_60xt8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nysbh")
+text = "Buy"
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
