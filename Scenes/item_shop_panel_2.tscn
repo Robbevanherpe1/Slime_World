@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7tk36vfcxc1v"]
+[gd_scene load_steps=12 format=3 uid="uid://b7tk36vfcxc1v"]
 
 [ext_resource type="Script" path="res://Scripts/item_shop_panel_2.gd" id="1_dudxe"]
 [ext_resource type="Texture2D" uid="uid://d3ysv0o6lqlnc" path="res://Assets/HyperCasual-Game-UI/coinIcon.png" id="1_tnf6s"]
-[ext_resource type="Texture2D" uid="uid://dg47sitw28pnn" path="res://Assets/game/used_items/healthPotion.png" id="3_vxi0d"]
+[ext_resource type="Texture2D" uid="uid://c2yd205wgruri" path="res://Assets/game/used_items/healthPotion.png" id="3_vxi0d"]
 [ext_resource type="Texture2D" uid="uid://bhxy8xtvjhq50" path="res://Assets/game/used_items/hulkPotion.png" id="4_c7jkc"]
 [ext_resource type="Texture2D" uid="uid://c4v03jq18kd5x" path="res://Assets/game/used_items/emptyItemSlot.png" id="5_14qmb"]
+[ext_resource type="Texture2D" uid="uid://ca7rc6rxgxgtv" path="res://Assets/game/used_items/speedPotion.png" id="5_gb0hp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31tje"]
 bg_color = Color(0.262745, 0.262745, 0.262745, 1)
@@ -106,7 +107,7 @@ item_0/icon = ExtResource("3_vxi0d")
 item_1/text = ""
 item_1/icon = ExtResource("4_c7jkc")
 item_2/text = ""
-item_2/icon = ExtResource("5_14qmb")
+item_2/icon = ExtResource("5_gb0hp")
 item_3/text = ""
 item_3/icon = ExtResource("5_14qmb")
 item_4/text = ""

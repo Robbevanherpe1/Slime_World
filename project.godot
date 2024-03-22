@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="Slime World"
+config/version="v3.0"
 run/main_scene="res://Scenes/Start_Screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://logo slimeworld2.png"
+config/macos_native_icon="res://logo slimeworld2.png"
+config/windows_native_icon="res://logo-slimeworld2.ico"
 
 [autoload]
 
@@ -24,7 +27,6 @@ ItemsGlobal="*res://Scripts/items_global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

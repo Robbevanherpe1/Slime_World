@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2yd205wgruri"
-path="res://.godot/imported/healthPotion.png-6858987bc43913bc0b8b8422475fe521.ctex"
+uid="uid://bhm5a43l4y26j"
+path="res://.godot/imported/logo slimeworld.png-12bf59bc8e81cb94519128a3ace86ba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game/used_items/healthPotion.png"
-dest_files=["res://.godot/imported/healthPotion.png-6858987bc43913bc0b8b8422475fe521.ctex"]
+source_file="res://logo slimeworld.png"
+dest_files=["res://.godot/imported/logo slimeworld.png-12bf59bc8e81cb94519128a3ace86ba2.ctex"]
 
 [params]
 
