@@ -78,6 +78,7 @@ func _on_buy_button_pressed():
 			if Global.player_coins >= ItemsGlobal.item_price:
 				Global.player_coins -= ItemsGlobal.item_price
 				Global.set_player_shield("res://Assets/game/used weapons/shield2.png")
+				Global.set_player_health(100 + (20 * ItemsGlobal.schield_health))
 		_:
 			print("error buy item") # Replace with function body.
 

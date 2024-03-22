@@ -61,3 +61,22 @@ func  Empty_ItemSLot(itemslot):
 				$Items/item5.text = ""
 			_:
 				print("error Itembar itemslot index")
+
+func _on_items_item_clicked(index, _at_position, _mouse_button_index):
+	match index:
+		0:
+			Global.health_potions_amount -= 1
+			if (Global.max_player_health -Global.player_health) > 50:
+				Global.player_health += 50
+			else: 
+				Global.player_health = Global.max_player_health
+		1:
+			pass
+		2:
+			pass
+		3:
+			pass
+		4:
+			pass
+		5:
+			pass

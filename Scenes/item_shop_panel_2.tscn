@@ -47,6 +47,7 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_dudxe")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
@@ -55,6 +56,7 @@ scale = Vector2(36.3558, 24.116)
 theme_override_styles/panel = SubResource("StyleBoxFlat_31tje")
 
 [node name="Coins" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 146.0
 offset_top = 273.0
 offset_right = 313.0
@@ -87,6 +89,7 @@ scale = Vector2(1.68783, 0.600855)
 text = "Coins:"
 
 [node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
 offset_left = 530.0
 offset_top = 88.0
 offset_right = 628.0
@@ -132,6 +135,7 @@ item_15/text = ""
 item_15/icon = ExtResource("5_14qmb")
 
 [node name="item1" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 550.0
 offset_top = 285.0
 offset_right = 717.0
@@ -155,6 +159,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item2" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 735.0
 offset_top = 284.0
 offset_right = 902.0
@@ -178,6 +183,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item3" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 922.0
 offset_top = 284.0
 offset_right = 1089.0
@@ -201,6 +207,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item4" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 1106.0
 offset_top = 281.0
 offset_right = 1273.0
@@ -224,6 +231,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item5" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 550.0
 offset_top = 460.0
 offset_right = 717.0
@@ -247,6 +255,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item6" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 735.0
 offset_top = 459.0
 offset_right = 902.0
@@ -270,6 +279,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item7" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 922.0
 offset_top = 459.0
 offset_right = 1089.0
@@ -293,6 +303,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item8" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 1106.0
 offset_top = 456.0
 offset_right = 1273.0
@@ -316,6 +327,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item9" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 553.0
 offset_top = 635.0
 offset_right = 720.0
@@ -339,6 +351,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item10" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 738.0
 offset_top = 634.0
 offset_right = 905.0
@@ -362,6 +375,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item11" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 925.0
 offset_top = 634.0
 offset_right = 1092.0
@@ -385,6 +399,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item12" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 1109.0
 offset_top = 631.0
 offset_right = 1276.0
@@ -408,6 +423,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item13" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 560.0
 offset_top = 810.0
 offset_right = 727.0
@@ -431,6 +447,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item14" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 739.0
 offset_top = 811.0
 offset_right = 906.0
@@ -454,6 +471,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item15" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 920.0
 offset_top = 810.0
 offset_right = 1087.0
@@ -477,6 +495,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="item16" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 1110.0
 offset_top = 810.0
 offset_right = 1277.0
@@ -500,6 +519,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 170.0
 offset_top = 750.0
 offset_right = 216.0

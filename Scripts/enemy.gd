@@ -65,7 +65,7 @@ func attack_player():
 	# Set a timer and when it hits 100 attack player
 	Attack_timer +=1
 	if Attack_timer ==50: #speed of attack
-		player.player_health -= 10
+		Global.player_health -= 10
 		print("removed health -10")
 		Attack_timer = 0
 	else:

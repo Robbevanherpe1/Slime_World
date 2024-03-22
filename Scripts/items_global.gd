@@ -29,7 +29,7 @@ const hulkPotion_price = "10 000"
 const extra_price = "10"
 
 var sword_damage
-var schield_health
+var schield_health =0
 var bow_power
 var arrow_damage
 
@@ -170,3 +170,5 @@ func set_weapon_equiped():
 		weapon_equiped = "Bow"
 	if Input.is_action_just_pressed("useSword"):
 		weapon_equiped = "Sword"
+		
+

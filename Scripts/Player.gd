@@ -5,19 +5,19 @@ var direction:Vector2 = Vector2.ZERO
 var speed = 50
 var speed_animation = 1
 var sprint = false
-var player_health = 100 + (20 * ItemsGlobal.schield_health)
-var max_player_health = 100 + (20 * ItemsGlobal.schield_health)
 var player_stamina = 100
 var stamina_timer = 0
 
 func _ready():
 	# At start add to group Player for checking if player
 	self.add_to_group("Player")
+	Global.set_player_health(100 + (20 * ItemsGlobal.schield_health))
 
 func _process(_delta):
 	movement()
 	actionkey()
 	set_player_bars()
+	Global.set_max_player_health(100 + (20 * ItemsGlobal.schield_health))
 	change_stamina()
 	player_dead()
 
@@ -51,7 +51,7 @@ func actionkey():
 
 func player_dead():
 	# If player_health <=0 change sceen to start and reset player position
-	if player_health <=0:
+	if Global.player_health <=0:
 		$AnimatedSprite2D.play("dead")
 		await get_tree().create_timer(2.0).timeout
 		Global.set_player_position(Global.player_position_default)
@@ -112,8 +112,8 @@ func show_animation():
 
 func set_player_bars():
 	# Set health and stamina bar value
-	$stats/ColorRect/health_bar_player/health_player.text = "%s / %s" % [player_health, max_player_health]
-	$stats/ColorRect/health_bar_player.value = player_health
+	$stats/ColorRect/health_bar_player/health_player.text = "%s / %s" % [Global.player_health, Global.max_player_health]
+	$stats/ColorRect/health_bar_player.value = Global.player_health
 	$stats/ColorRect/stamina_bar_player/stamina_player.text = ("%s / 100") % player_stamina
 	$stats/ColorRect/stamina_bar_player.value = player_stamina
 	$stats/ColorRect/Coins/coins_amount.text = ("%s") % Global.player_coins
