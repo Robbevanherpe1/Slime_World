@@ -65,18 +65,21 @@ func  Empty_ItemSLot(itemslot):
 func _on_items_item_clicked(index, _at_position, _mouse_button_index):
 	match index:
 		0:
-			Global.health_potions_amount -= 1
+			if Global.health_potions_amount > 0:
+				Global.health_potions_amount -= 1
 			if (Global.max_player_health -Global.player_health) > 50:
 				Global.player_health += 50
 			else: 
 				Global.player_health = Global.max_player_health
 		1:
-			Global.hulk_potions_amount -= 1
+			if Global.hulk_potions_amount > 0:
+				Global.hulk_potions_amount -= 1
 			Global.attack_multiplier = 1.5
 			await get_tree().create_timer(10).timeout
 			Global.attack_multiplier = 1
 		2:
-			Global.speed_potions_amount -= 1
+			if Global.speed_potions_amount > 0:
+				Global.speed_potions_amount -= 1
 			Global.speed_multiplier = 1.5
 			await get_tree().create_timer(10).timeout
 			Global.speed_multiplier = 1
