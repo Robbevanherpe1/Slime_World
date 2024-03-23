@@ -6,6 +6,9 @@ var player_actionkey = false # Show Action key to player
 var player_health = 100
 var max_player_health = 100 
 
+#player stats multipliers
+var attack_multiplier = 1
+var speed_multiplier = 1
 
 #player stats items
 var player_coins = 0
@@ -17,6 +20,7 @@ var player_arrow = "res://Assets/game/used weapons/arrow1.png"
 #player useable items
 var health_potions_amount = 0
 var hulk_potions_amount = 0
+var speed_potions_amount = 0
 var extra = 0
 
 
@@ -36,10 +40,12 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
+	set_player_coins(100000)
 	#set_player_coins(10000)
 	#health_potions_amount = 2
 	#hulk_potions_amount = 2
 	#set_progress_player()
+	pass
 
 func _exit_tree():
 	save_game()
@@ -49,6 +55,7 @@ func save_game():
 	save_file.store_var(player_coins)
 	save_file.store_var(health_potions_amount)
 	save_file.store_var(hulk_potions_amount)
+	save_file.store_var(speed_potions_amount)
 	save_file.store_string(player_sword + "\n")
 	save_file.store_string(player_shield + "\n")
 	save_file.store_string(player_bow + "\n")
@@ -61,6 +68,7 @@ func load_data():
 		player_coins = file.get_var()
 		health_potions_amount = file.get_var()
 		hulk_potions_amount = file.get_var()
+		speed_potions_amount = file.get_var()
 		player_sword = file.get_line()
 		player_shield = file.get_line()
 		player_bow = file.get_line()

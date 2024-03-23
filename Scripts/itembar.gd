@@ -18,21 +18,21 @@ func _process(_delta):
 	else:
 		Empty_ItemSLot(2)
 	
-	if Global.extra != 0:
-		$Items.set_item_icon( 2, load("res://Assets/game/used_items/emptyItemSlot.png"))
-		$Items/item2.text = str(Global.hulk_potions_amount)
+	if Global.speed_potions_amount != 0:
+		$Items.set_item_icon( 2, load("res://Assets/game/used_items/speedPotion.png"))
+		$Items/item3.text = str(Global.speed_potions_amount)
 	else:
 		Empty_ItemSLot(3)
 	
 	if Global.extra != 0:
 		$Items.set_item_icon( 3, load("res://Assets/game/used_items/emptyItemSlot.png"))
-		$Items/item2.text = str(Global.hulk_potions_amount)
+		$Items/item4.text = str(Global.hulk_potions_amount)
 	else:
 		Empty_ItemSLot(4)
 	
 	if Global.extra != 0:
 		$Items.set_item_icon( 4, load("res://Assets/game/used_items/emptyItemSlot.png"))
-		$Items/item2.text = str(Global.hulk_potions_amount)
+		$Items/item5.text = str(Global.hulk_potions_amount)
 	else:
 		Empty_ItemSLot(5)
 
@@ -71,9 +71,15 @@ func _on_items_item_clicked(index, _at_position, _mouse_button_index):
 			else: 
 				Global.player_health = Global.max_player_health
 		1:
-			pass
+			Global.hulk_potions_amount -= 1
+			Global.attack_multiplier = 1.5
+			await get_tree().create_timer(10).timeout
+			Global.attack_multiplier = 1
 		2:
-			pass
+			Global.speed_potions_amount -= 1
+			Global.speed_multiplier = 1.5
+			await get_tree().create_timer(10).timeout
+			Global.speed_multiplier = 1
 		3:
 			pass
 		4:

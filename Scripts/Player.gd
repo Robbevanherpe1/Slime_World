@@ -23,7 +23,7 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	# set velocity then move with move_and_slide(velocity)
-	velocity = direction * speed
+	velocity = (direction * speed) * Global.speed_multiplier
 	move_and_slide()
 	show_animation()
 

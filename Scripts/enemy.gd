@@ -20,7 +20,7 @@ func _process(_delta):
 		if HP >0:
 			attack_player()
 			if Input.is_action_just_pressed("fight") and player.player_stamina != 0:
-				HP -= 30 * ItemsGlobal.sword_damage
+				HP -= 30 * ItemsGlobal.sword_damage * Global.attack_multiplier
 				set_health_bar()
 				attack_player()
 		else:

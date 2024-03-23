@@ -32,7 +32,7 @@ func _on_buy_button_pressed():
 		"[2]":
 			if Global.player_coins >= ItemsGlobal.item_price:
 				Global.player_coins -= ItemsGlobal.item_price
-				ItemsGlobal.add_useable_item("extra")
+				ItemsGlobal.add_useable_item("SpeedPotion")
 		"[3]":
 			if Global.player_coins >= ItemsGlobal.item_price:
 				Global.player_coins -= ItemsGlobal.item_price
@@ -53,7 +53,7 @@ func set_shop_prices():
 	#setting shop labels to item price
 	$item1/price.text = ItemsGlobal.healthPotion_price
 	$item2/price.text = ItemsGlobal.hulkPotion_price
-	$item3/price.text = ItemsGlobal.extra_price
+	$item3/price.text = ItemsGlobal.speedPotion_price
 	$item4/price.text = ItemsGlobal.extra_price
 	$item5/price.text = ItemsGlobal.extra_price
 	$item6/price.text = ItemsGlobal.extra_price
