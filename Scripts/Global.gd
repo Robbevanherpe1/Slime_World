@@ -2,7 +2,6 @@ extends Node
 
 var player_position_default = Vector2(645,160) # Position of player in scene default
 var player_position = Vector2(645,160) # Position of player in scene
-var player_actionkey = false # Show Action key to player
 var player_health = 100
 var max_player_health = 100 
 
@@ -40,12 +39,12 @@ var save_path = "user://save_game.save"
 
 func _ready():
 	load_data()
-	set_player_coins(100000)
+	#set_player_coins(100000)
 	#set_player_coins(10000)
 	#health_potions_amount = 2
 	#hulk_potions_amount = 2
+	#speed_potions_amount = 10
 	#set_progress_player()
-	pass
 
 func _exit_tree():
 	save_game()
@@ -79,6 +78,7 @@ func load_data():
 		player_coins = 0
 		health_potions_amount = 0
 		hulk_potions_amount = 0
+		speed_potions_amount = 0
 		player_sword = "res://Assets/game/used weapons/sword1.png"
 		player_shield = "res://Assets/game/used weapons/shield1.png"
 		player_bow = "res://Assets/game/used weapons/bow1.png"
@@ -93,12 +93,6 @@ func set_player_position(value):
 func get_player_position():
 	return player_position
 	
-func set_player_actionkey(value):
-	player_actionkey = value
-
-func get_player_actionkey():
-	return player_actionkey
-
 func set_player_coins(amount):
 	player_coins += amount
 

@@ -22,6 +22,7 @@ config/windows_native_icon="res://logo-slimeworld2.ico"
 
 Global="*res://Scripts/Global.gd"
 ItemsGlobal="*res://Scripts/items_global.gd"
+GlobalBuildings="*res://Scripts/Global_buildings.gd"
 
 [display]
 

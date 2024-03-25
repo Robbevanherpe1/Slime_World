@@ -12,11 +12,11 @@ func _process(_delta):
 func _on_exit_body_entered(body):
 	# If player enters exit zone show actionkey and set player_exit mode true
 	if body.is_in_group("Player"):
-		Global.set_player_actionkey(true)
+		GlobalBuildings.player_actionkey = true
 		player_exit = true
 
 func _on_exit_body_exited(body):
 	# If player exits the exit zone hide actionkey and set player_exit mode false
 	if body.is_in_group("Player"):
-		Global.set_player_actionkey(false)
+		GlobalBuildings.player_actionkey = false
 		player_exit = false

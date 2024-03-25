@@ -45,7 +45,7 @@ func movement():
 
 func actionkey():
 	# Show actionkey when in action zone
-	$ActionKey.visible = Global.get_player_actionkey()
+	$ActionKey.visible = GlobalBuildings.player_actionkey
 
 #player state
 
